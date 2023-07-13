@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05E564072A5FD60700267FD8 /* SharedSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564062A5FD60700267FD8 /* SharedSing.swift */; };
+		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
 		05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F122A5E993E00B6FFDE /* AppDelegate.swift */; };
 		05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */; };
 		05E92F172A5E993E00B6FFDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F162A5E993E00B6FFDE /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		05E564062A5FD60700267FD8 /* SharedSing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSing.swift; sourceTree = "<group>"; };
+		05E564082A60015100267FD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05E92F0F2A5E993E00B6FFDE /* Hi Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hi Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E92F122A5E993E00B6FFDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 			children = (
 				05E92F112A5E993E00B6FFDE /* Hi Health */,
 				05E92F102A5E993E00B6FFDE /* Products */,
-				F8A4D0FE54141135C2515924 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +74,7 @@
 				05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */,
 				05E92F202A5E993F00B6FFDE /* Info.plist */,
 				05E564062A5FD60700267FD8 /* SharedSing.swift */,
+				05E564082A60015100267FD8 /* Constants.swift */,
 			);
 			path = "Hi Health";
 			sourceTree = "<group>";
@@ -91,13 +93,6 @@
 				05E92F2A2A5EB83700B6FFDE /* Authen.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		F8A4D0FE54141135C2515924 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +170,7 @@
 				05E564072A5FD60700267FD8 /* SharedSing.swift in Sources */,
 				05E92F2B2A5EB83700B6FFDE /* Authen.swift in Sources */,
 				05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */,
+				05E564092A60015100267FD8 /* Constants.swift in Sources */,
 				05E92F282A5EAC0900B6FFDE /* APIService.swift in Sources */,
 				05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */,
 			);

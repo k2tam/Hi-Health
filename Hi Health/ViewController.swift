@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        apiService.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleURLCode(_:)), name: Notification.Name("GetURLCode"), object: nil)
 
@@ -45,5 +45,13 @@ extension ViewController : ASWebAuthenticationPresentationContextProviding {
     }
 }
 
+
+extension ViewController: APIServiceDelegate {
+    func didSuccessAuthorized() {
+        self.performSegue(withIdentifier: K.segueLoginToHome, sender: self)
+    }
+    
+    
+}
 
 
