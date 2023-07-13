@@ -12,15 +12,28 @@ import AuthenticationServices
 class ViewController: UIViewController {
 
     
+    let apiService = APIService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleURLCode(_:)), name: Notification.Name("GetURLCode"), object: nil)
+
+    }
+    
+    @objc func handleURLCode(_ notification: Notification) {
+        if let url = notification.userInfo?["urlCode"] as? URL {
+            // Process the URL as needed
+            apiService.didGetUrlCode(url: url)
+        }
     }
     
 
     @IBAction func loginBtn(_ sender: UIButton) {
-        APIService().authorize(viewController: self)
+        apiService.authorize(viewController: self)
+        
     }
     
     
