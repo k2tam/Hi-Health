@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05E564072A5FD60700267FD8 /* SharedSing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564062A5FD60700267FD8 /* SharedSing.swift */; };
 		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
+		05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564132A60E7E600267FD8 /* ProfileViewController.swift */; };
+		05E564162A60E89C00267FD8 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564152A60E89C00267FD8 /* Athlete.swift */; };
+		05E564192A60EEAE00267FD8 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564172A60EEAE00267FD8 /* InfoCell.swift */; };
+		05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E564182A60EEAE00267FD8 /* InfoCell.xib */; };
+		05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E5641C2A60F5FD00267FD8 /* TableData.swift */; };
+		05E564212A60F73200267FD8 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564202A60F73200267FD8 /* Chart.swift */; };
+		05E564232A60F73E00267FD8 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564222A60F73E00267FD8 /* Normal.swift */; };
+		05E564262A60FBB500267FD8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564252A60FBB500267FD8 /* Profile.swift */; };
+		05E564292A6106B100267FD8 /* ProfileTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564282A6106B100267FD8 /* ProfileTableViewModel.swift */; };
 		05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F122A5E993E00B6FFDE /* AppDelegate.swift */; };
 		05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */; };
 		05E92F172A5E993E00B6FFDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F162A5E993E00B6FFDE /* ViewController.swift */; };
@@ -16,12 +24,21 @@
 		05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E92F1B2A5E993F00B6FFDE /* Assets.xcassets */; };
 		05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */; };
 		05E92F282A5EAC0900B6FFDE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F272A5EAC0900B6FFDE /* APIService.swift */; };
-		05E92F2B2A5EB83700B6FFDE /* Authen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F2A2A5EB83700B6FFDE /* Authen.swift */; };
+		05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */; };
+		F33F23EE8855DC65BC33383C /* Pods_Hi_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05E564062A5FD60700267FD8 /* SharedSing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSing.swift; sourceTree = "<group>"; };
 		05E564082A60015100267FD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		05E564132A60E7E600267FD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		05E564152A60E89C00267FD8 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
+		05E564172A60EEAE00267FD8 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		05E564182A60EEAE00267FD8 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
+		05E5641C2A60F5FD00267FD8 /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		05E564202A60F73200267FD8 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		05E564222A60F73E00267FD8 /* Normal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
+		05E564252A60FBB500267FD8 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		05E564282A6106B100267FD8 /* ProfileTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewModel.swift; sourceTree = "<group>"; };
 		05E92F0F2A5E993E00B6FFDE /* Hi Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hi Health.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E92F122A5E993E00B6FFDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +48,10 @@
 		05E92F1E2A5E993F00B6FFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05E92F202A5E993F00B6FFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E92F272A5EAC0900B6FFDE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		05E92F2A2A5EB83700B6FFDE /* Authen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authen.swift; sourceTree = "<group>"; };
+		05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExchange.swift; sourceTree = "<group>"; };
+		493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.release.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.release.xcconfig"; sourceTree = "<group>"; };
+		5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hi_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.debug.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +59,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33F23EE8855DC65BC33383C /* Pods_Hi_Health.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E564112A60E64300267FD8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05E92F182A5E993E00B6FFDE /* Main.storyboard */,
+				05E564182A60EEAE00267FD8 /* InfoCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05E564122A60E7AE00267FD8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05E92F162A5E993E00B6FFDE /* ViewController.swift */,
+				05E564272A60FCE300267FD8 /* TableCells */,
+				05E564132A60E7E600267FD8 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		05E5641B2A60F59000267FD8 /* ProfileTables */ = {
+			isa = PBXGroup;
+			children = (
+				05E5641C2A60F5FD00267FD8 /* TableData.swift */,
+				05E564202A60F73200267FD8 /* Chart.swift */,
+				05E564222A60F73E00267FD8 /* Normal.swift */,
+				05E564252A60FBB500267FD8 /* Profile.swift */,
+			);
+			path = ProfileTables;
+			sourceTree = "<group>";
+		};
+		05E564242A60F9FD00267FD8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				05E564282A6106B100267FD8 /* ProfileTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		05E564272A60FCE300267FD8 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				05E564172A60EEAE00267FD8 /* InfoCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
 		05E92F062A5E993E00B6FFDE = {
 			isa = PBXGroup;
 			children = (
 				05E92F112A5E993E00B6FFDE /* Hi Health */,
 				05E92F102A5E993E00B6FFDE /* Products */,
+				BF0C1E3B1F362FD64600DE65 /* Pods */,
+				1A676D5D7A71B7C112179194 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,17 +133,17 @@
 		05E92F112A5E993E00B6FFDE /* Hi Health */ = {
 			isa = PBXGroup;
 			children = (
-				05E92F292A5EB81A00B6FFDE /* Models */,
-				05E92F262A5EABFC00B6FFDE /* Services */,
 				05E92F122A5E993E00B6FFDE /* AppDelegate.swift */,
 				05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */,
-				05E92F162A5E993E00B6FFDE /* ViewController.swift */,
-				05E92F182A5E993E00B6FFDE /* Main.storyboard */,
+				05E564082A60015100267FD8 /* Constants.swift */,
+				05E564242A60F9FD00267FD8 /* ViewModels */,
+				05E564122A60E7AE00267FD8 /* Controllers */,
+				05E564112A60E64300267FD8 /* Views */,
+				05E92F292A5EB81A00B6FFDE /* Models */,
+				05E92F262A5EABFC00B6FFDE /* Services */,
 				05E92F1B2A5E993F00B6FFDE /* Assets.xcassets */,
 				05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */,
 				05E92F202A5E993F00B6FFDE /* Info.plist */,
-				05E564062A5FD60700267FD8 /* SharedSing.swift */,
-				05E564082A60015100267FD8 /* Constants.swift */,
 			);
 			path = "Hi Health";
 			sourceTree = "<group>";
@@ -90,9 +159,28 @@
 		05E92F292A5EB81A00B6FFDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				05E92F2A2A5EB83700B6FFDE /* Authen.swift */,
+				05E564152A60E89C00267FD8 /* Athlete.swift */,
+				05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */,
+				05E5641B2A60F59000267FD8 /* ProfileTables */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1A676D5D7A71B7C112179194 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF0C1E3B1F362FD64600DE65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */,
+				493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05E92F232A5E993F00B6FFDE /* Build configuration list for PBXNativeTarget "Hi Health" */;
 			buildPhases = (
+				335C37B3337625349AA66574 /* [CP] Check Pods Manifest.lock */,
 				05E92F0B2A5E993E00B6FFDE /* Sources */,
 				05E92F0C2A5E993E00B6FFDE /* Frameworks */,
 				05E92F0D2A5E993E00B6FFDE /* Resources */,
+				11D7204018E1350A5B8AC4EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */,
+				05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */,
 				05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */,
 				05E92F1A2A5E993E00B6FFDE /* Main.storyboard in Resources */,
 			);
@@ -161,18 +252,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11D7204018E1350A5B8AC4EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hi Health/Pods-Hi Health-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hi Health/Pods-Hi Health-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hi Health/Pods-Hi Health-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		335C37B3337625349AA66574 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hi Health-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05E92F0B2A5E993E00B6FFDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				05E92F172A5E993E00B6FFDE /* ViewController.swift in Sources */,
-				05E564072A5FD60700267FD8 /* SharedSing.swift in Sources */,
-				05E92F2B2A5EB83700B6FFDE /* Authen.swift in Sources */,
+				05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */,
+				05E564262A60FBB500267FD8 /* Profile.swift in Sources */,
 				05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */,
 				05E564092A60015100267FD8 /* Constants.swift in Sources */,
 				05E92F282A5EAC0900B6FFDE /* APIService.swift in Sources */,
+				05E564232A60F73E00267FD8 /* Normal.swift in Sources */,
+				05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */,
+				05E564292A6106B100267FD8 /* ProfileTableViewModel.swift in Sources */,
+				05E564212A60F73200267FD8 /* Chart.swift in Sources */,
+				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
 				05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */,
+				05E564192A60EEAE00267FD8 /* InfoCell.swift in Sources */,
+				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +454,7 @@
 		};
 		05E92F242A5E993F00B6FFDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -346,6 +487,7 @@
 		};
 		05E92F252A5E993F00B6FFDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

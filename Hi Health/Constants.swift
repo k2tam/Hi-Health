@@ -9,4 +9,19 @@ import Foundation
 
 struct K {
     static let segueLoginToHome = "LoginToHome"
+    
+    struct UserDefaultKeys {
+        static let athleteID = "athleteId"
+        static let scope = "scope"
+        static let accessToken = "accessToken"
+        static let refreshToken = "refreshToken"
+        static let expiresAt = "expiresAt"
+    }
+    
+  
+    
+    struct Cells {
+        static let profileCellNibName = "InfoCell"
+        static let profileCellId = "ProfileCellIdentifier"
+    }
 }
