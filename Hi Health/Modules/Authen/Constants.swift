@@ -17,9 +17,7 @@ struct K {
         static let refreshToken = "refreshToken"
         static let expiresAt = "expiresAt"
     }
-    
-  
-    
+
     struct Cells {
         static let profileCellNibName = "InfoCell"
         static let profileCellId = "ProfileCellIdentifier"

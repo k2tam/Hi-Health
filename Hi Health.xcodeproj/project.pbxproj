@@ -133,16 +133,9 @@
 		05E92F112A5E993E00B6FFDE /* Hi Health */ = {
 			isa = PBXGroup;
 			children = (
-				05E92F122A5E993E00B6FFDE /* AppDelegate.swift */,
-				05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */,
-				05E564082A60015100267FD8 /* Constants.swift */,
-				05E564242A60F9FD00267FD8 /* ViewModels */,
-				05E564122A60E7AE00267FD8 /* Controllers */,
-				05E564112A60E64300267FD8 /* Views */,
-				05E92F292A5EB81A00B6FFDE /* Models */,
-				05E92F262A5EABFC00B6FFDE /* Services */,
-				05E92F1B2A5E993F00B6FFDE /* Assets.xcassets */,
-				05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */,
+				9977679F2A613DB1004C9CC1 /* Core */,
+				997767A42A61425B004C9CC1 /* Modules */,
+				997767A92A6145B9004C9CC1 /* Resource */,
 				05E92F202A5E993F00B6FFDE /* Info.plist */,
 			);
 			path = "Hi Health";
@@ -159,11 +152,9 @@
 		05E92F292A5EB81A00B6FFDE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				05E564152A60E89C00267FD8 /* Athlete.swift */,
-				05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */,
-				05E5641B2A60F59000267FD8 /* ProfileTables */,
 			);
-			path = Models;
+			name = Models;
+			path = ../../Models;
 			sourceTree = "<group>";
 		};
 		1A676D5D7A71B7C112179194 /* Frameworks */ = {
@@ -172,6 +163,96 @@
 				5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9977679F2A613DB1004C9CC1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				997767A22A613F3C004C9CC1 /* LocalData */,
+				997767A02A613DD6004C9CC1 /* TabBarHome */,
+				997767A12A613DEF004C9CC1 /* Base */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		997767A02A613DD6004C9CC1 /* TabBarHome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBarHome;
+			sourceTree = "<group>";
+		};
+		997767A12A613DEF004C9CC1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */,
+				05E92F142A5E993E00B6FFDE /* SceneDelegate.swift */,
+				05E92F122A5E993E00B6FFDE /* AppDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		997767A22A613F3C004C9CC1 /* LocalData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalData;
+			sourceTree = "<group>";
+		};
+		997767A32A613F55004C9CC1 /* Authen */ = {
+			isa = PBXGroup;
+			children = (
+				05E564112A60E64300267FD8 /* Views */,
+				05E92F292A5EB81A00B6FFDE /* Models */,
+				05E564122A60E7AE00267FD8 /* Controllers */,
+				997767A82A614507004C9CC1 /* Models */,
+				05E564082A60015100267FD8 /* Constants.swift */,
+				05E92F262A5EABFC00B6FFDE /* Services */,
+			);
+			path = Authen;
+			sourceTree = "<group>";
+		};
+		997767A42A61425B004C9CC1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				997767A62A6144B8004C9CC1 /* Athelete */,
+				997767A32A613F55004C9CC1 /* Authen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		997767A62A6144B8004C9CC1 /* Athelete */ = {
+			isa = PBXGroup;
+			children = (
+				05E564242A60F9FD00267FD8 /* ViewModels */,
+				05E5641B2A60F59000267FD8 /* ProfileTables */,
+				997767A72A6144CB004C9CC1 /* Models */,
+			);
+			path = Athelete;
+			sourceTree = "<group>";
+		};
+		997767A72A6144CB004C9CC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05E564152A60E89C00267FD8 /* Athlete.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		997767A82A614507004C9CC1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		997767A92A6145B9004C9CC1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				05E92F1B2A5E993F00B6FFDE /* Assets.xcassets */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		BF0C1E3B1F362FD64600DE65 /* Pods */ = {
