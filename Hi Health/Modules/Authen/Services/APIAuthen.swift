@@ -14,19 +14,16 @@ protocol APIServiceDelegate {
     
 }
 
-class APIService {
+class APIAuthen {
     let clientID = "110470"
     let clientSecret = "d69b84d8f46f26a64415c905099741eaeeeb9ee0"
-    let redirectUri = "myapp://myapp.com"
+    let redirectUri = "myapp://developers.strava.com"
     let scope = "activity:read,activity:write"
     
-    var athleteData: Athlete!
-    
-
     let defaults = UserDefaults.standard
-    
     var delegate: APIServiceDelegate?
-    
+    var athleteModel: Athlete!
+
     
     
     func saveAuthorizedData(tokenExchange: TokenExchange) {
@@ -36,12 +33,14 @@ class APIService {
         defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
         
         
-        athleteData = tokenExchange.athleteInfo
     }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
         
         saveAuthorizedData(tokenExchange: tokenExchange)
+        
+        athleteModel = tokenExchange.athleteInfo
+
         
         DispatchQueue.main.async {
             self.delegate?.didSuccessAuthorized()
@@ -93,7 +92,7 @@ class APIService {
                 
                 //Get code for exchanging
                 if let code = self.extractAuthorizationCode(from: url){
-//                    let urlForExchangeString = "https://www.strava.com/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(code)&grant_type=authorization_code"
+
                     
                     let urlForExchangeString = "https://www.strava.com/api/v3/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(code)&grant_type=authorization_code"
                     
@@ -121,7 +120,7 @@ class APIService {
 }
 
 //Support methods
-extension APIService {
+extension APIAuthen {
     
     func getTokenExchangeFromApp(codeForExchange: String) {
         let urlForExchangeString = "https://www.strava.com/api/v3/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(codeForExchange)&grant_type=authorization_code"

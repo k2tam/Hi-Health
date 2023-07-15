@@ -12,12 +12,12 @@ import AuthenticationServices
 class ViewController: UIViewController {
 
     
-    let apiService = APIService()
+    let apiAuthen = APIAuthen()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        apiService.delegate = self
+        apiAuthen.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleURLCode(_:)), name: Notification.Name("GetURLCode"), object: nil)
 
@@ -26,12 +26,12 @@ class ViewController: UIViewController {
     @objc func handleURLCode(_ notification: Notification) {
         if let url = notification.userInfo?["urlCode"] as? URL {
             // Process the URL as needed
-            apiService.didGetUrlCode(url: url)
+            apiAuthen.didGetUrlCode(url: url)
         }
     }
 
     @IBAction func loginBtn(_ sender: UIButton) {
-        apiService.authorize(viewController: self)
+        apiAuthen.authorize(viewController: self)
         
     }
 }
@@ -49,7 +49,10 @@ extension ViewController: APIServiceDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if(segue.identifier == K.segueLoginToHome){
+            let vc = segue.destination as! ProfileViewController
+            vc.apiAuthen = self.apiAuthen
+        }
     }
     
     

@@ -1,5 +1,5 @@
 //
-//  ProfileInfoTableViewCell.swift
+//  InfoCell.swift
 //  Hi Health
 //
 //  Created by k2 tam on 14/07/2023.
@@ -9,14 +9,12 @@ import UIKit
 
 class InfoCell: UITableViewCell {
 
-    
-    @IBOutlet weak var profileAvatar: UIImageView!
-    @IBOutlet weak var profileName: UILabel!
-    @IBOutlet weak var location: UILabel!
-    
+    @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

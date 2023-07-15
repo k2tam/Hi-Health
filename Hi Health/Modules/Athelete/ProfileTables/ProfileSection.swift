@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct Profile {
+struct ProfileSection {
     let firstName: String
     let lastName: String
     let state: String
     let country: String
     let avatarUrlString: String
+    var rows = 0
+    
+    var profileNameDisplay: String {
+        return "\(firstName) \(lastName)"
+    }
+    
+    var userLocation: String {
+        return  "\(state), \(country)"
+    }
 }
 

@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Chart {
+struct ChartSection {
     let currentPeriod: String
     let distance: Double
     let time: Int
     let elevation: Int
+    var rows = 0
 }
 
 
