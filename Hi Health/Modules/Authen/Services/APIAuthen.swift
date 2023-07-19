@@ -18,7 +18,7 @@ class APIAuthen {
     let clientID = "110470"
     let clientSecret = "d69b84d8f46f26a64415c905099741eaeeeb9ee0"
     let redirectUri = "myapp://developers.strava.com"
-    let scope = "activity:read,activity:write"
+    let scope = "read_all,activity:read_all,activity:write"
     
     let defaults = UserDefaults.standard
     var delegate: APIServiceDelegate?
@@ -32,16 +32,15 @@ class APIAuthen {
         defaults.set(tokenExchange.refreshToken, forKey: K.UserDefaultKeys.refreshToken)
         defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
         
-        
+  
     }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
-        
+
         saveAuthorizedData(tokenExchange: tokenExchange)
         
         athleteModel = tokenExchange.athleteInfo
 
-        
         DispatchQueue.main.async {
             self.delegate?.didSuccessAuthorized()
         }
@@ -194,7 +193,5 @@ extension APIAuthen {
         return nil
     }
 }
-
-
 
 

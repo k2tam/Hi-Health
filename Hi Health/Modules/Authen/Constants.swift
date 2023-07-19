@@ -21,5 +21,9 @@ struct K {
     struct Cells {
         static let profileCellNibName = "InfoCell"
         static let profileCellId = "ProfileCellIdentifier"
+        static let chartCellNibName = "ChartCell"
+        static let chartCellId = "ChartCellIdentifier"
+        static let actiBtnCellNibName = "ActiBtnCell"
+        static let actiBtnCellId = "activityBtnCellId"
     }
 }

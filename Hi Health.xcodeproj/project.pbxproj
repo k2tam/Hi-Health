@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E32A312A64E432007FAF34 /* ActiBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */; };
+		05E32A322A64E432007FAF34 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E32A302A64E432007FAF34 /* ActiBtnCell.xib */; };
+		05E32A342A64F193007FAF34 /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E32A332A64F193007FAF34 /* ActivityChartView.swift */; };
+		05E32A372A653307007FAF34 /* APIActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E32A362A653307007FAF34 /* APIActivity.swift */; };
 		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
 		05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564132A60E7E600267FD8 /* ProfileViewController.swift */; };
 		05E564162A60E89C00267FD8 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564152A60E89C00267FD8 /* Athlete.swift */; };
@@ -25,10 +29,19 @@
 		05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */; };
 		05E92F282A5EAC0900B6FFDE /* APIAuthen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F272A5EAC0900B6FFDE /* APIAuthen.swift */; };
 		05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */; };
+		05EA0E632A627BF900ACCDF6 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA0E622A627BF900ACCDF6 /* ImageCacheProvider.swift */; };
+		05EA0E652A63F87800ACCDF6 /* FakeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA0E642A63F87800ACCDF6 /* FakeProfileViewModel.swift */; };
+		05EA0E672A64012B00ACCDF6 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA0E662A64012B00ACCDF6 /* Utilites.swift */; };
+		05EA0E6E2A642CC100ACCDF6 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA0E6C2A642CC100ACCDF6 /* ChartCell.swift */; };
+		05EA0E6F2A642CC100ACCDF6 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05EA0E6D2A642CC100ACCDF6 /* ChartCell.xib */; };
 		F33F23EE8855DC65BC33383C /* Pods_Hi_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiBtnCell.swift; sourceTree = "<group>"; };
+		05E32A302A64E432007FAF34 /* ActiBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiBtnCell.xib; sourceTree = "<group>"; };
+		05E32A332A64F193007FAF34 /* ActivityChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChartView.swift; sourceTree = "<group>"; };
+		05E32A362A653307007FAF34 /* APIActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIActivity.swift; sourceTree = "<group>"; };
 		05E564082A60015100267FD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05E564132A60E7E600267FD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05E564152A60E89C00267FD8 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
@@ -49,6 +62,11 @@
 		05E92F202A5E993F00B6FFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E92F272A5EAC0900B6FFDE /* APIAuthen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthen.swift; sourceTree = "<group>"; };
 		05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExchange.swift; sourceTree = "<group>"; };
+		05EA0E622A627BF900ACCDF6 /* ImageCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProvider.swift; sourceTree = "<group>"; };
+		05EA0E642A63F87800ACCDF6 /* FakeProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeProfileViewModel.swift; sourceTree = "<group>"; };
+		05EA0E662A64012B00ACCDF6 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		05EA0E6C2A642CC100ACCDF6 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		05EA0E6D2A642CC100ACCDF6 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.release.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.release.xcconfig"; sourceTree = "<group>"; };
 		5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hi_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.debug.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05E32A352A6532A6007FAF34 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				05E32A362A653307007FAF34 /* APIActivity.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		05E564112A60E64300267FD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +108,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		05E5641B2A60F59000267FD8 /* ProfileTables */ = {
+		05E5641B2A60F59000267FD8 /* ProfileTables Models */ = {
 			isa = PBXGroup;
 			children = (
 				05E5641C2A60F5FD00267FD8 /* TableData.swift */,
@@ -90,13 +116,14 @@
 				05E564222A60F73E00267FD8 /* ItemSection.swift */,
 				05E564252A60FBB500267FD8 /* ProfileSection.swift */,
 			);
-			path = ProfileTables;
+			path = "ProfileTables Models";
 			sourceTree = "<group>";
 		};
 		05E564242A60F9FD00267FD8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				05E564282A6106B100267FD8 /* ProfileViewModel.swift */,
+				05EA0E642A63F87800ACCDF6 /* FakeProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -105,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				05E564182A60EEAE00267FD8 /* InfoCell.xib */,
+				05EA0E6D2A642CC100ACCDF6 /* ChartCell.xib */,
+				05E32A302A64E432007FAF34 /* ActiBtnCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +143,8 @@
 			children = (
 				05E564132A60E7E600267FD8 /* ProfileViewController.swift */,
 				05E564332A615B2B00267FD8 /* InfoCell.swift */,
+				05EA0E6C2A642CC100ACCDF6 /* ChartCell.swift */,
+				05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +170,7 @@
 		05E92F112A5E993E00B6FFDE /* Hi Health */ = {
 			isa = PBXGroup;
 			children = (
+				05EA0E612A627BD000ACCDF6 /* Utilities */,
 				9977679F2A613DB1004C9CC1 /* Core */,
 				997767A42A61425B004C9CC1 /* Modules */,
 				997767A92A6145B9004C9CC1 /* Resource */,
@@ -161,6 +193,15 @@
 			);
 			name = Models;
 			path = ../../Models;
+			sourceTree = "<group>";
+		};
+		05EA0E612A627BD000ACCDF6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				05EA0E622A627BF900ACCDF6 /* ImageCacheProvider.swift */,
+				05EA0E662A64012B00ACCDF6 /* Utilites.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		1A676D5D7A71B7C112179194 /* Frameworks */ = {
@@ -230,11 +271,13 @@
 		997767A62A6144B8004C9CC1 /* Athelete */ = {
 			isa = PBXGroup;
 			children = (
+				05E32A352A6532A6007FAF34 /* Services */,
 				05E564302A61596700267FD8 /* Controllers */,
 				05E5642C2A61581900267FD8 /* Views */,
 				05E564242A60F9FD00267FD8 /* ViewModels */,
-				05E5641B2A60F59000267FD8 /* ProfileTables */,
+				05E5641B2A60F59000267FD8 /* ProfileTables Models */,
 				997767A72A6144CB004C9CC1 /* Models */,
+				05E32A332A64F193007FAF34 /* ActivityChartView.swift */,
 			);
 			path = Athelete;
 			sourceTree = "<group>";
@@ -332,10 +375,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05EA0E6F2A642CC100ACCDF6 /* ChartCell.xib in Resources */,
 				05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */,
 				05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */,
 				05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */,
 				05E92F1A2A5E993E00B6FFDE /* Main.storyboard in Resources */,
+				05E32A322A64E432007FAF34 /* ActiBtnCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,13 +437,20 @@
 				05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */,
 				05E564262A60FBB500267FD8 /* ProfileSection.swift in Sources */,
 				05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */,
+				05E32A372A653307007FAF34 /* APIActivity.swift in Sources */,
+				05E32A312A64E432007FAF34 /* ActiBtnCell.swift in Sources */,
 				05E564092A60015100267FD8 /* Constants.swift in Sources */,
 				05E92F282A5EAC0900B6FFDE /* APIAuthen.swift in Sources */,
 				05E564232A60F73E00267FD8 /* ItemSection.swift in Sources */,
 				05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */,
 				05E564292A6106B100267FD8 /* ProfileViewModel.swift in Sources */,
+				05EA0E652A63F87800ACCDF6 /* FakeProfileViewModel.swift in Sources */,
 				05E564212A60F73200267FD8 /* ChartSection.swift in Sources */,
+				05EA0E632A627BF900ACCDF6 /* ImageCacheProvider.swift in Sources */,
+				05EA0E6E2A642CC100ACCDF6 /* ChartCell.swift in Sources */,
+				05EA0E672A64012B00ACCDF6 /* Utilites.swift in Sources */,
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
+				05E32A342A64F193007FAF34 /* ActivityChartView.swift in Sources */,
 				05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */,
 				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 				05E564352A615B2B00267FD8 /* InfoCell.swift in Sources */,
@@ -557,7 +609,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,7 +642,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

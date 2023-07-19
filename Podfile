@@ -6,7 +6,6 @@ target 'Hi Health' do
   use_frameworks!
 
   # Pods for Hi Health
-  pod 'RealmSwift'
   pod 'SwiftyJSON'
 
 end
