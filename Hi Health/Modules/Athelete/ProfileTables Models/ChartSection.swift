@@ -22,12 +22,22 @@ struct SpecificActivity {
         }
     }
     
-    var orderedActivites: [Activity] {
+    var descOrderedActivites: [Activity] {
         return activities.sorted { (activity1, activity2) -> Bool in
-               if let date1 = activity1.starDate, let date2 = activity2.starDate {
-                   return date1 > date2
-               }
-               return false
+//               if let date1 = activity1.starDate, let date2 = activity2.starDate {
+//                   return date1 > date2
+//               }
+//               return false
+            return activity1.starDate > activity2.starDate
+            
+           }
+    }
+    
+    var ascOrderedActivites: [Activity] {
+        return activities.sorted { (activity1, activity2) -> Bool in
+
+            return activity1.starDate < activity2.starDate
+            
            }
     }
 }
@@ -65,23 +75,38 @@ struct ChartSection {
 }
 
 struct Activity {
-    let distance: Double?
-    let movingTime: Int?
-    let starDate: String?
-    let activityType: String?
+    let distance: Double
+    let movingTime: Int
+    let starDate: String
+    let activityType: String
+    
+    var formattedStartDate: String {
+            let inputDateFormatter = ISO8601DateFormatter()
+            inputDateFormatter.formatOptions = [.withInternetDateTime]
+
+            if let date = inputDateFormatter.date(from: starDate) {
+                let outputDateFormatter = DateFormatter()
+                outputDateFormatter.dateFormat = "dd/MM/yyyy"
+                return outputDateFormatter.string(from: date)
+            } else {
+                return ""
+            }
+        }
     
     var distanceString: String {
-        guard let distance = distance else {
-            return "0,00 km"
-        }
+//        guard let distance = distance else {
+//            return "0,00 km"
+//        }
         
         return  String(format: "%.2f km", distance/1000.0)
     }
     
     var timeString: String {
-        guard let movingTime = movingTime else {
-            return "0h"
-        }
+//        guard let movingTime = movingTime else {
+//            return "0h"
+//        }
+        
+        
         
         
         let hours = movingTime / 3600

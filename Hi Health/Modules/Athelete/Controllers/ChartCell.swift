@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ChartCell: UITableViewCell {
     
@@ -31,8 +32,8 @@ class ChartCell: UITableViewCell {
 
     private func updateUI(actiIndex: Int) {
         // Use chartCellData to update the UI elements in the cell
-        let latestActivityTypeToDisplay =  groupedActivities?[actiIndex].orderedActivites.first
-
+        let latestActivityTypeToDisplay =  groupedActivities?[actiIndex].descOrderedActivites.first
+        setupChartView(actiIndex: actiIndex)
         distanceLabel.text = latestActivityTypeToDisplay?.distanceString
         timeLabel.text = latestActivityTypeToDisplay?.timeString
 
@@ -51,9 +52,31 @@ class ChartCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         initActiCollectionView()
+//        setupChartView()
+        
+      
         
         
+    }
+    
+    func setupChartView(actiIndex: Int) {
+        let hostingController = UIHostingController(rootView: ActivitesChart(activities: groupedActivities?[actiIndex].ascOrderedActivites ?? []))
         
+        guard let chartDataView = hostingController.view else { return }
+        
+        
+        contentView.addSubview(chartDataView)
+
+        // Set the hostingController's view to match the chartView bounds
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: chartView.topAnchor),
+            hostingController.view.leadingAnchor.constraint(equalTo: chartView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: chartView.trailingAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: chartView.bottomAnchor)
+        ])
+        
+      
     }
     
 }

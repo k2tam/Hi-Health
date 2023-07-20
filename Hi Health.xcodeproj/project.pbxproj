@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0555D4A82A69639E004084DE /* ActivitesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555D4A72A69639E004084DE /* ActivitesChart.swift */; };
 		05E32A312A64E432007FAF34 /* ActiBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */; };
 		05E32A322A64E432007FAF34 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E32A302A64E432007FAF34 /* ActiBtnCell.xib */; };
 		05E32A342A64F193007FAF34 /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E32A332A64F193007FAF34 /* ActivityChartView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0555D4A72A69639E004084DE /* ActivitesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesChart.swift; sourceTree = "<group>"; };
 		05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiBtnCell.swift; sourceTree = "<group>"; };
 		05E32A302A64E432007FAF34 /* ActiBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiBtnCell.xib; sourceTree = "<group>"; };
 		05E32A332A64F193007FAF34 /* ActivityChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChartView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				05E564332A615B2B00267FD8 /* InfoCell.swift */,
 				05EA0E6C2A642CC100ACCDF6 /* ChartCell.swift */,
 				05E32A2F2A64E432007FAF34 /* ActiBtnCell.swift */,
+				0555D4A72A69639E004084DE /* ActivitesChart.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
 				05E32A342A64F193007FAF34 /* ActivityChartView.swift in Sources */,
 				05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */,
+				0555D4A82A69639E004084DE /* ActivitesChart.swift in Sources */,
 				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 				05E564352A615B2B00267FD8 /* InfoCell.swift in Sources */,
 			);
