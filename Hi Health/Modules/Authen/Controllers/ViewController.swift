@@ -52,6 +52,7 @@ extension ViewController: APIServiceDelegate {
         if(segue.identifier == K.segueLoginToHome){
             let vc = segue.destination as! ProfileViewController
             vc.apiAuthen = self.apiAuthen
+            
         }
     }
     

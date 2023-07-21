@@ -9,12 +9,17 @@ import UIKit
 
 class InfoCell: UITableViewCell {
 
+    @IBOutlet weak var avatarImgView: UIImageView!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        avatarImgView.layer.cornerRadius = avatarImgView.frame.size.height / 2
+        avatarImgView.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

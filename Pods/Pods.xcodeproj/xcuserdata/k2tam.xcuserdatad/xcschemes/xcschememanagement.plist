@@ -6,8 +6,6 @@
 	<dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
@@ -20,17 +18,23 @@
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
+<<<<<<< HEAD
+=======
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+>>>>>>> f65a399739d051a8b7c7500b8ce85483e68dc546
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>

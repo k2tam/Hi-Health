@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */; };
 		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
 		05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564132A60E7E600267FD8 /* ProfileViewController.swift */; };
 		05E564162A60E89C00267FD8 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564152A60E89C00267FD8 /* Athlete.swift */; };
@@ -24,6 +25,10 @@
 		05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E92F1D2A5E993F00B6FFDE /* LaunchScreen.storyboard */; };
 		05E92F282A5EAC0900B6FFDE /* APIAuthen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F272A5EAC0900B6FFDE /* APIAuthen.swift */; };
 		05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */; };
+		15E6C7174A6A372388889008 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */; };
+		16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */; };
+		1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */; };
+		78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */; };
 		9967E0752A64EE7600AB6B0C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */; };
 		9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */; };
 		9967E0822A6535A700AB6B0C /* MyTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */; };
@@ -31,7 +36,12 @@
 		9967E0882A653D7500AB6B0C /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967E0862A653D7500AB6B0C /* HomeVC.xib */; };
 		99AFE9C52A64D5CA00615AB7 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFE9C42A64D5CA00615AB7 /* TabItem.swift */; };
 		99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */; };
+		9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63791BBA89695561977F6E /* ImageCacheProvider.swift */; };
+		CB124105F9862C31F2644AA3 /* APIActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A2979FB735EB21EDBF7A3 /* APIActivity.swift */; };
+		D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCCC6E44AD958F139E9E58 /* FakeProfileViewModel.swift */; };
+		DC9F10425389CEA73226B258 /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E96E987F1DC7A049A0CC32E7 /* ChartCell.xib */; };
 		F33F23EE8855DC65BC33383C /* Pods_Hi_Health.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */; };
+		FB7A98FCABD50B4BBB2FB21C /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A49FD4A563BCCAF0492840 /* Utilites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +64,14 @@
 		05E92F202A5E993F00B6FFDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E92F272A5EAC0900B6FFDE /* APIAuthen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthen.swift; sourceTree = "<group>"; };
 		05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenExchange.swift; sourceTree = "<group>"; };
+		189A2979FB735EB21EDBF7A3 /* APIActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIActivity.swift; sourceTree = "<group>"; };
+		1E63791BBA89695561977F6E /* ImageCacheProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheProvider.swift; sourceTree = "<group>"; };
 		493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.release.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.release.xcconfig"; sourceTree = "<group>"; };
+		4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiBtnCell.swift; sourceTree = "<group>"; };
 		5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hi_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71A49FD4A563BCCAF0492840 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChartView.swift; sourceTree = "<group>"; };
 		9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarVC.swift; sourceTree = "<group>"; };
@@ -63,7 +79,11 @@
 		9967E0862A653D7500AB6B0C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		99AFE9C42A64D5CA00615AB7 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
+		9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesChart.swift; sourceTree = "<group>"; };
+		CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiBtnCell.xib; sourceTree = "<group>"; };
+		E96E987F1DC7A049A0CC32E7 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.debug.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.debug.xcconfig"; sourceTree = "<group>"; };
+		FFFCCC6E44AD958F139E9E58 /* FakeProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,21 +114,11 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		05E5641B2A60F59000267FD8 /* ProfileTables */ = {
-			isa = PBXGroup;
-			children = (
-				05E5641C2A60F5FD00267FD8 /* TableData.swift */,
-				05E564202A60F73200267FD8 /* ChartSection.swift */,
-				05E564222A60F73E00267FD8 /* ItemSection.swift */,
-				05E564252A60FBB500267FD8 /* ProfileSection.swift */,
-			);
-			path = ProfileTables;
-			sourceTree = "<group>";
-		};
 		05E564242A60F9FD00267FD8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				05E564282A6106B100267FD8 /* ProfileViewModel.swift */,
+				FFFCCC6E44AD958F139E9E58 /* FakeProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -117,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				05E564182A60EEAE00267FD8 /* InfoCell.xib */,
+				E96E987F1DC7A049A0CC32E7 /* ChartCell.xib */,
+				CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +138,9 @@
 			children = (
 				05E564132A60E7E600267FD8 /* ProfileViewController.swift */,
 				05E564332A615B2B00267FD8 /* InfoCell.swift */,
+				4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */,
+				549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */,
+				9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,6 +170,7 @@
 				997767A42A61425B004C9CC1 /* Modules */,
 				997767A92A6145B9004C9CC1 /* Resource */,
 				05E92F202A5E993F00B6FFDE /* Info.plist */,
+				DBDAD666939D5A6B2DE3D4C8 /* Utilities */,
 			);
 			path = "Hi Health";
 			sourceTree = "<group>";
@@ -181,6 +197,17 @@
 				5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CBAC045C4EF8D634933B904 /* ProfileTables Models */ = {
+			isa = PBXGroup;
+			children = (
+				05E5641C2A60F5FD00267FD8 /* TableData.swift */,
+				05E564202A60F73200267FD8 /* ChartSection.swift */,
+				05E564222A60F73E00267FD8 /* ItemSection.swift */,
+				05E564252A60FBB500267FD8 /* ProfileSection.swift */,
+			);
+			path = "ProfileTables Models";
 			sourceTree = "<group>";
 		};
 		9967E0782A64FC9F00AB6B0C /* Home */ = {
@@ -260,8 +287,10 @@
 				05E564302A61596700267FD8 /* Controllers */,
 				05E5642C2A61581900267FD8 /* Views */,
 				05E564242A60F9FD00267FD8 /* ViewModels */,
-				05E5641B2A60F59000267FD8 /* ProfileTables */,
 				997767A72A6144CB004C9CC1 /* Models */,
+				D7DEA4E5256E5B40C4BB52D4 /* Services */,
+				3CBAC045C4EF8D634933B904 /* ProfileTables Models */,
+				90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */,
 			);
 			path = Athelete;
 			sourceTree = "<group>";
@@ -304,6 +333,23 @@
 				493892CD8F40B401CB12EB8D /* Pods-Hi Health.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D7DEA4E5256E5B40C4BB52D4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				189A2979FB735EB21EDBF7A3 /* APIActivity.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DBDAD666939D5A6B2DE3D4C8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1E63791BBA89695561977F6E /* ImageCacheProvider.swift */,
+				71A49FD4A563BCCAF0492840 /* Utilites.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +418,8 @@
 				99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */,
 				05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */,
 				05E92F1A2A5E993E00B6FFDE /* Main.storyboard in Resources */,
+				DC9F10425389CEA73226B258 /* ChartCell.xib in Resources */,
+				1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +474,7 @@
 			files = (
 				05E92F172A5E993E00B6FFDE /* ViewController.swift in Sources */,
 				05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */,
-				05E564262A60FBB500267FD8 /* Profile.swift in Sources */,
+				05E564262A60FBB500267FD8 /* ProfileSection.swift in Sources */,
 				9967E0872A653D7500AB6B0C /* HomeVC.swift in Sources */,
 				05E92F132A5E993E00B6FFDE /* AppDelegate.swift in Sources */,
 				9967E0822A6535A700AB6B0C /* MyTabBarVC.swift in Sources */,
@@ -438,15 +486,21 @@
 				05E564292A6106B100267FD8 /* ProfileViewModel.swift in Sources */,
 				05E564212A60F73200267FD8 /* ChartSection.swift in Sources */,
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
-				05E92F152A5E993E00B6FFDE /* SceneDelegate.swift in Sources */,
 				9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */,
 				99AFE9C52A64D5CA00615AB7 /* TabItem.swift in Sources */,
-				05E564292A6106B100267FD8 /* ProfileTableViewModel.swift in Sources */,
-				05E564212A60F73200267FD8 /* Chart.swift in Sources */,
+				05E564292A6106B100267FD8 /* ProfileViewModel.swift in Sources */,
+				05E564212A60F73200267FD8 /* ChartSection.swift in Sources */,
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
-				05E564192A60EEAE00267FD8 /* InfoCell.swift in Sources */,
 				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 				05E564352A615B2B00267FD8 /* InfoCell.swift in Sources */,
+				CB124105F9862C31F2644AA3 /* APIActivity.swift in Sources */,
+				0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */,
+				D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */,
+				9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */,
+				15E6C7174A6A372388889008 /* ChartCell.swift in Sources */,
+				FB7A98FCABD50B4BBB2FB21C /* Utilites.swift in Sources */,
+				78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */,
+				16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +655,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +687,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
