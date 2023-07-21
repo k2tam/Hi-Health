@@ -26,4 +26,5 @@ struct K {
         static let actiBtnCellNibName = "ActiBtnCell"
         static let actiBtnCellId = "activityBtnCellId"
     }
+    
 }

@@ -34,6 +34,12 @@
 		9967E0822A6535A700AB6B0C /* MyTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */; };
 		9967E0872A653D7500AB6B0C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0852A653D7500AB6B0C /* HomeVC.swift */; };
 		9967E0882A653D7500AB6B0C /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967E0862A653D7500AB6B0C /* HomeVC.xib */; };
+		9995CF352A6A7ADA007B1284 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995CF342A6A7ADA007B1284 /* HomeVM.swift */; };
+		9995CF372A6A7B19007B1284 /* MyDataLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995CF362A6A7B19007B1284 /* MyDataLocal.swift */; };
+		9995CF3F2A6A9460007B1284 /* ActiviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995CF3D2A6A9460007B1284 /* ActiviesVC.swift */; };
+		9995CF402A6A9460007B1284 /* ActiviesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9995CF3E2A6A9460007B1284 /* ActiviesVC.xib */; };
+		9995CF432A6A955D007B1284 /* CustomActivitiesTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995CF412A6A955D007B1284 /* CustomActivitiesTblCell.swift */; };
+		9995CF442A6A955D007B1284 /* CustomActivitiesTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9995CF422A6A955D007B1284 /* CustomActivitiesTblCell.xib */; };
 		99AFE9C52A64D5CA00615AB7 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFE9C42A64D5CA00615AB7 /* TabItem.swift */; };
 		99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */; };
 		9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63791BBA89695561977F6E /* ImageCacheProvider.swift */; };
@@ -77,6 +83,12 @@
 		9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarVC.swift; sourceTree = "<group>"; };
 		9967E0852A653D7500AB6B0C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		9967E0862A653D7500AB6B0C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		9995CF342A6A7ADA007B1284 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		9995CF362A6A7B19007B1284 /* MyDataLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataLocal.swift; sourceTree = "<group>"; };
+		9995CF3D2A6A9460007B1284 /* ActiviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviesVC.swift; sourceTree = "<group>"; };
+		9995CF3E2A6A9460007B1284 /* ActiviesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiviesVC.xib; sourceTree = "<group>"; };
+		9995CF412A6A955D007B1284 /* CustomActivitiesTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivitiesTblCell.swift; sourceTree = "<group>"; };
+		9995CF422A6A955D007B1284 /* CustomActivitiesTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomActivitiesTblCell.xib; sourceTree = "<group>"; };
 		99AFE9C42A64D5CA00615AB7 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
 		9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesChart.swift; sourceTree = "<group>"; };
@@ -213,8 +225,11 @@
 		9967E0782A64FC9F00AB6B0C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				9967E0852A653D7500AB6B0C /* HomeVC.swift */,
-				9967E0862A653D7500AB6B0C /* HomeVC.xib */,
+				9995CF322A6A7A0D007B1284 /* Controller */,
+				9995CF2E2A6A78F3007B1284 /* ViewModel */,
+				9995CF312A6A795C007B1284 /* Manager */,
+				9995CF302A6A7937007B1284 /* View */,
+				9995CF2F2A6A7909007B1284 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +268,7 @@
 		997767A22A613F3C004C9CC1 /* LocalData */ = {
 			isa = PBXGroup;
 			children = (
+				9995CF362A6A7B19007B1284 /* MyDataLocal.swift */,
 			);
 			path = LocalData;
 			sourceTree = "<group>";
@@ -319,9 +335,91 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		9995CF2E2A6A78F3007B1284 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9995CF342A6A7ADA007B1284 /* HomeVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9995CF2F2A6A7909007B1284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9995CF302A6A7937007B1284 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9995CF312A6A795C007B1284 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9967E0862A653D7500AB6B0C /* HomeVC.xib */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9995CF322A6A7A0D007B1284 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9967E0852A653D7500AB6B0C /* HomeVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9995CF382A6A9419007B1284 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9995CF392A6A9422007B1284 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9995CF412A6A955D007B1284 /* CustomActivitiesTblCell.swift */,
+				9995CF422A6A955D007B1284 /* CustomActivitiesTblCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9995CF3A2A6A9427007B1284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9995CF3B2A6A9430007B1284 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9995CF3C2A6A943D007B1284 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9995CF3D2A6A9460007B1284 /* ActiviesVC.swift */,
+				9995CF3E2A6A9460007B1284 /* ActiviesVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		99AFE9C32A64D47200615AB7 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				9995CF3C2A6A943D007B1284 /* Controller */,
+				9995CF3B2A6A9430007B1284 /* Manager */,
+				9995CF3A2A6A9427007B1284 /* Model */,
+				9995CF392A6A9422007B1284 /* View */,
+				9995CF382A6A9419007B1284 /* ViewModel */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -413,8 +511,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */,
+				9995CF402A6A9460007B1284 /* ActiviesVC.xib in Resources */,
 				9967E0882A653D7500AB6B0C /* HomeVC.xib in Resources */,
 				05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */,
+				9995CF442A6A955D007B1284 /* CustomActivitiesTblCell.xib in Resources */,
 				99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */,
 				05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */,
 				05E92F1A2A5E993E00B6FFDE /* Main.storyboard in Resources */,
@@ -473,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E92F172A5E993E00B6FFDE /* ViewController.swift in Sources */,
+				9995CF432A6A955D007B1284 /* CustomActivitiesTblCell.swift in Sources */,
 				05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */,
 				05E564262A60FBB500267FD8 /* ProfileSection.swift in Sources */,
 				9967E0872A653D7500AB6B0C /* HomeVC.swift in Sources */,
@@ -483,6 +584,7 @@
 				05E92F282A5EAC0900B6FFDE /* APIAuthen.swift in Sources */,
 				05E564232A60F73E00267FD8 /* ItemSection.swift in Sources */,
 				05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */,
+				9995CF372A6A7B19007B1284 /* MyDataLocal.swift in Sources */,
 				05E564292A6106B100267FD8 /* ProfileViewModel.swift in Sources */,
 				05E564212A60F73200267FD8 /* ChartSection.swift in Sources */,
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
@@ -497,7 +599,9 @@
 				0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */,
 				D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */,
 				9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */,
+				9995CF352A6A7ADA007B1284 /* HomeVM.swift in Sources */,
 				15E6C7174A6A372388889008 /* ChartCell.swift in Sources */,
+				9995CF3F2A6A9460007B1284 /* ActiviesVC.swift in Sources */,
 				FB7A98FCABD50B4BBB2FB21C /* Utilites.swift in Sources */,
 				78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */,
 				16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */,

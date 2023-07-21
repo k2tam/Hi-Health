@@ -36,10 +36,6 @@ class ProfileViewController: UIViewController {
         
         profileVM = ProfileViewModel(apiService: apiAuthen)
         
-        
-     
-
-
         profileVM.fetchProfileTableData {[weak self] profileTableData in
             self?.tableProfileData = profileTableData
             

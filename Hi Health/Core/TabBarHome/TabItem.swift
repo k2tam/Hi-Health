@@ -17,7 +17,7 @@ enum TabItem{
         case .home:
             return UINavigationController(rootViewController: HomeVC())
         case .challenge:
-            return UIViewController()
+            return UINavigationController(rootViewController: HomeVC())
         case .activies:
             return UIViewController()
         }

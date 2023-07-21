@@ -1,15 +1,14 @@
 //
-//  HomeVC.swift
+//  ActiviesVC.swift
 //  Hi Health
 //
-//  Created by TaiVC on 7/17/23.
+//  Created by TaiVC on 7/21/23.
 //
 
 import UIKit
 
-class HomeVC: UIViewController {
+class ActiviesVC: UIViewController {
 
-    @IBOutlet weak var text: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

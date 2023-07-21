@@ -31,8 +31,6 @@ class APIAuthen {
         defaults.set(tokenExchange.accessToken, forKey: K.UserDefaultKeys.accessToken)
         defaults.set(tokenExchange.refreshToken, forKey: K.UserDefaultKeys.refreshToken)
         defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
-        
-  
     }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
