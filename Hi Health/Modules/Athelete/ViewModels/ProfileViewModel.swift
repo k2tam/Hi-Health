@@ -11,28 +11,27 @@ import SwiftyJSON
 
 class ProfileViewModel {
         
-    private var apiAuthen: APIAuthen
     private var tableProfileData = ProfileTable()
     
     var groupedActivites: GroupedActivities?
 
     
-    init(apiService: APIAuthen) {
-        self.apiAuthen = apiService
-        
-    }
-    
     func fetchProfileTableData(completion: @escaping (_ profileTableData: ProfileTable) -> Void ) {
-        let athleteModel = apiAuthen.athleteModel
+        
+        guard let tokenExchange = TokenDataManager.shared.getTokens() else {
+            print("No token exchange data")
+            return
+        }
+        
+        let athleteModel = tokenExchange.athleteInfo
+        
         
         guard let athleteModel = athleteModel else {
-            
             print("No athlete model")
             return
         }
         
-        
-        let userInfoSection = ProfileSection(firstName: athleteModel.firstName!, lastName: athleteModel.lastName!, state: athleteModel.state!, country: athleteModel.country!, avatarUrlString: athleteModel.profileMedium!)
+        let userInfoSection = ProfileSection(firstName: athleteModel.firstName, lastName: athleteModel.lastName, state: athleteModel.state, country: athleteModel.country, avatarUrlString: athleteModel.profileMedium)
         
         
         APIActvity.shared.fetchAthleteGroupedActivitiesData { [self] groupedActivites in
@@ -50,15 +49,6 @@ class ProfileViewModel {
         }
 
 
-//        let chartDataSection = ChartSection(groupedActivies: groupedActivites?.activites)
-        
-//
-//        let groupedActivites = [
-//            SpecificActivity(typeActivity: "Walk", activities: [Activity(distance: 1852.9, movingTime: 365, starDate: "2023-07-15T13:04:39Z", activityType: "Walk"),Activity(distance: 189.4, movingTime: 117, starDate: "2023-07-17T03:56:32Z", activityType: "Walk")]),
-//
-//             SpecificActivity(typeActivity: "EBikeRide", activities: [Activity(distance: 5805.4, movingTime: 746, starDate: "2023-07-14T11:10:07Z", activityType: "EBikeRide")]
-//                                             )]
-//
         let chartDataSection = ChartSection(groupedActivies: [])
         
         

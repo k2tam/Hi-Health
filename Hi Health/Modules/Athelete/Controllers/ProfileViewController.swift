@@ -8,21 +8,20 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-  
-    
-    
+
     @IBOutlet weak var profileTableView: UITableView!
     
 //    var profileVM: FakeProfileViewModel!
     var profileVM: ProfileViewModel!
 
     
-    var apiAuthen: APIAuthen!
     var tableProfileData: ProfileTable!
     var groupedActivites: [SpecificActivity]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         initProfileVM()
         initProfileTalble()
@@ -34,16 +33,15 @@ class ProfileViewController: UIViewController {
         
 //                profileVM = FakeProfileViewModel()
         
-        profileVM = ProfileViewModel(apiService: apiAuthen)
+        profileVM = ProfileViewModel()
         
+
         profileVM.fetchProfileTableData {[weak self] profileTableData in
             self?.tableProfileData = profileTableData
-            
             
             DispatchQueue.main.async {
                 self?.profileTableView.reloadData()
 //                print(self?.tableProfileData.profileSections[1])
-
             }
 
         }
@@ -60,10 +58,8 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UITableViewDataSource {
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
-	        return tableProfileData.profileSections.count
+            return tableProfileData.profileSections.count
     }
     
     
@@ -86,6 +82,7 @@ extension ProfileViewController: UITableViewDataSource {
             let profileInfoSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.profileCellId) as! InfoCell
             profileInfoSectionView.displayNameLabel.text = profileSectionModel.profileNameDisplay
             profileInfoSectionView.locationLabel.text = profileSectionModel.userLocation
+            profileInfoSectionView.delegate = self
         
             let url = URL(string: profileSectionModel.avatarUrlString)
             
@@ -109,12 +106,8 @@ extension ProfileViewController: UITableViewDataSource {
         case let .chart(chartSectionModel):
             let chartSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.chartCellId) as! ChartCell
             
-            
-            
-            
             chartSectionView.chartCellData = chartSectionModel
-            
-            
+ 
             
             return chartSectionView
             
@@ -131,5 +124,44 @@ extension ProfileViewController: UITableViewDataSource {
 }
 
 extension ProfileViewController: UITableViewDelegate {
+    
+}
+
+extension ProfileViewController: InfoCellDelegate {
+    func signOutButtonTapped() {
+        
+        performDeauthorizeRequest(accessToken: String(TokenDataManager.shared.getAccessToken()))
+
+        TokenDataManager.shared.clearUserLocalData()
+        
+        
+        navigationController?.popToRootViewController(animated: true)
+        
+    }
+    
+    func performDeauthorizeRequest(accessToken: String) {
+        let urlString = "https://www.strava.com/oauth/deauthorize"
+        
+        let url = URL(string: urlString)
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        let bodyParameters = "access_token=\(accessToken)"
+        request.httpBody = bodyParameters.data(using: .utf8)
+        
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { _, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                // Handle the error accordingly
+                return
+            }
+           
+        }
+        
+        task.resume()
+    }
+    
     
 }

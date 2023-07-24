@@ -48,13 +48,7 @@ extension ViewController: APIServiceDelegate {
         self.performSegue(withIdentifier: K.segueLoginToHome, sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == K.segueLoginToHome){
-            let vc = segue.destination as! ProfileViewController
-            vc.apiAuthen = self.apiAuthen
-            
-        }
-    }
+    
 }
 
 

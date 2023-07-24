@@ -22,22 +22,11 @@ class APIAuthen {
     
     let defaults = UserDefaults.standard
     var delegate: APIServiceDelegate?
-    var athleteModel: Athlete!
-
     
     
-    func saveAuthorizedData(tokenExchange: TokenExchange) {
-        defaults.set(tokenExchange.athleteId, forKey: K.UserDefaultKeys.athleteID)
-        defaults.set(tokenExchange.accessToken, forKey: K.UserDefaultKeys.accessToken)
-        defaults.set(tokenExchange.refreshToken, forKey: K.UserDefaultKeys.refreshToken)
-        defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
-    }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
-
-        saveAuthorizedData(tokenExchange: tokenExchange)
-        
-        athleteModel = tokenExchange.athleteInfo
+        TokenDataManager.shared.saveData(tokenExchange: tokenExchange)
 
         DispatchQueue.main.async {
             self.delegate?.didSuccessAuthorized()
@@ -52,25 +41,42 @@ class APIAuthen {
         }
         
         performRequestGetTokenExchange(url: url) { tokenExchange in
-            self.saveAuthorizedData(tokenExchange: tokenExchange)
+            
+            TokenDataManager.shared.saveData(tokenExchange: tokenExchange)
         }
+        
+        checkLoginStatus()
     }
     
+    func checkLoginStatus() {
+        let expiresAtTimestamp: TimeInterval = Double(TokenDataManager.shared.getTokenExpiresAt())
+        // Get the current timestamp
+        
+        let currentTimestamp = Date().timeIntervalSince1970
+        
+
+        // Compare the expiration timestamp with the current timestamp
+        if  expiresAtTimestamp != 0 {
+            if expiresAtTimestamp < currentTimestamp {
+                getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
+               
+            } else {
+                delegate?.didSuccessAuthorized()
+
+            }
+        }
+    }
    
     
     func authorize(viewController: UIViewController) {
-        
-        
         let appOAuthUrlStravaSchemeString =  "strava://oauth/mobile/authorize?client_id=\(clientID)&redirect_uri=\(redirectUri)&response_type=code&approval_prompt=auto&scope=\(scope)&state=test"
         
         let webOAuthUrlString =  "https://www.strava.com/oauth/mobile/authorize?client_id=\(clientID)&redirect_uri=\(redirectUri)&response_type=code&approval_prompt=auto&scope=\(scope)&state=test"
-        
     
         guard let appOAuthUrlStravaScheme = URL(string: appOAuthUrlStravaSchemeString) else { return }
         guard let webOAuthUrl = URL(string: webOAuthUrlString) else {return}
         
-        
-        
+
         ///Authorize with app
         if(UIApplication.shared.canOpenURL(appOAuthUrlStravaScheme)){
             UIApplication.shared.open(appOAuthUrlStravaScheme, options: [:])
@@ -178,7 +184,6 @@ extension APIAuthen {
         return TokenExchange(from: json)
         
     }
-
     
     func extractAuthorizationCode(from url: URL) -> String? {
         if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems {

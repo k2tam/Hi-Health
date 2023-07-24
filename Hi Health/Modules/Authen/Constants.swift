@@ -16,6 +16,7 @@ struct K {
         static let accessToken = "accessToken"
         static let refreshToken = "refreshToken"
         static let expiresAt = "expiresAt"
+        static let athleteModel = "athleteModel"
     }
 
     struct Cells {
