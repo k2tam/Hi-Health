@@ -48,8 +48,8 @@ class TokenDataManager {
         return defaults.integer(forKey: K.UserDefaultKeys.refreshToken)
     }
     
-    func getAccessToken() -> Int {
-        return defaults.integer(forKey: K.UserDefaultKeys.accessToken)
+    func getAccessToken() -> String {
+        return defaults.string(forKey: K.UserDefaultKeys.accessToken)!
     }
     
     

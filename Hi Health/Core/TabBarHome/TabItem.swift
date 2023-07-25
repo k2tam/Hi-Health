@@ -15,7 +15,7 @@ enum TabItem{
     var viewController: UIViewController{
         switch self {
         case .home:
-            return UINavigationController(rootViewController: HomeVC())
+            return (UIStoryboard(name: "ActivitiesVC", bundle: Bundle(for: HomeVM.self)).instantiateViewController(withIdentifier: "ActivitiesVC") as? ActivitiesVC)!
         case .challenge:
             return UINavigationController(rootViewController: HomeVC())
         case .activies:

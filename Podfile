@@ -8,4 +8,5 @@ target 'Hi Health' do
   # Pods for Hi Health
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod 'Alamofire'
 end
