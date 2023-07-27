@@ -155,35 +155,60 @@ extension APIAuthen {
     
     
     func performRequestGetTokenExchange(url: URL, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let session = URLSession(configuration: .default)
+        var urlString: String!
+        do {
+            urlString = try String(contentsOf: url)
+        }catch {
+            print("Failed to convert url to url String")
+        }
         
-        let task = session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            if let safeData = data {
-                let tokenExchange = self.parseJsonAuthenData(from: safeData)
-                completion(tokenExchange)
+        APIManager.shared.requestAPI(endPoint: urlString, methodHTTP: .post,signatureHeader: true, optionalHeaders: nil, vc: nil) { json, sstc in
+            if(sstc?.statusCode == StatusCode.SUCCESS.rawValue){
+                
+                guard let json = json else {
+                    print("No json data")
+                    return
+                }
+                
+                completion(TokenExchange(from: json))
             }
         }
         
-        task.resume()
-        
     }
     
+//    func performRequestGetTokenExchange(url: URL, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let session = URLSession(configuration: .default)
+//
+//        let task = session.dataTask(with: request) { data, response, error in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//
+//            if let safeData = data {
+//                let tokenExchange = self.parseJsonAuthenData(from: safeData)
+//                completion(tokenExchange)
+//            }
+//        }
+//
+//            task.resume()
+//
+//    }
+        
+
     
-    func parseJsonAuthenData(from data: Data) -> TokenExchange {
-        let json = JSON(data)
-        
-        return TokenExchange(from: json)
-        
-    }
+    
+//    func parseJsonAuthenData(from data: Data) -> TokenExchange {
+//        let json = JSON(data)
+//
+//        return TokenExchange(from: json)
+//
+//    }
     
     func extractAuthorizationCode(from url: URL) -> String? {
         if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems {

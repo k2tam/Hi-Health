@@ -59,8 +59,7 @@ class APIManager{
                     break
                 }
                 
-                
-                
+   
                 
                 handler(JSON(json ?? Any.self),nil)
             case .failure(let error):

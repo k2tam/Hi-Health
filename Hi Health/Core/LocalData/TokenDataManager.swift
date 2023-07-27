@@ -49,7 +49,12 @@ class TokenDataManager {
     }
     
     func getAccessToken() -> String {
-        return defaults.string(forKey: K.UserDefaultKeys.accessToken)!
+        guard let accessToken = defaults.string(forKey: K.UserDefaultKeys.accessToken) else {
+            print("Failed get access Token")
+            return ""
+        }
+        
+        return accessToken
     }
     
     
@@ -58,19 +63,8 @@ class TokenDataManager {
     }
     
     
-
-    func getTokens() -> TokenExchange? {
-        let defaults = UserDefaults.standard
-        guard
-            let accessToken = defaults.string(forKey: K.UserDefaultKeys.accessToken),
-            let refreshToken = defaults.string(forKey: K.UserDefaultKeys.refreshToken)
-        else {
-            return nil
-        }
-        
-        let athleteId = defaults.integer(forKey: K.UserDefaultKeys.athleteID)
-        let expiresAt = defaults.integer(forKey: K.UserDefaultKeys.expiresAt)
-        
+    
+    func getAthleteModel() -> Athlete {
         let athleteModel: Athlete?
 
         if let athleteModelSaved = defaults.data(forKey: K.UserDefaultKeys.athleteModel) {
@@ -91,8 +85,9 @@ class TokenDataManager {
             fatalError("Failed to initialize 'athleteModel'")
         }
         
-        
-
-        return TokenExchange(refreshToken: refreshToken, accessToken: accessToken, expiresAt: expiresAt, athleteId: athleteId, athleteInfo: initializedAthleteModel)
+        return initializedAthleteModel
     }
+    
+
+    
 }
