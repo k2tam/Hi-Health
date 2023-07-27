@@ -30,6 +30,7 @@
 		16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */; };
 		1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */; };
 		78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */; };
+		993825062A70BB4A00F05886 /* LatLngModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993825052A70BB4A00F05886 /* LatLngModel.swift */; };
 		9967E0752A64EE7600AB6B0C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */; };
 		9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */; };
 		9967E0822A6535A700AB6B0C /* MyTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */; };
@@ -85,6 +86,7 @@
 		5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hi_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A49FD4A563BCCAF0492840 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChartView.swift; sourceTree = "<group>"; };
+		993825052A70BB4A00F05886 /* LatLngModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLngModel.swift; sourceTree = "<group>"; };
 		9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarVC.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				9989414C2A6FAD39004A3BFB /* ActivitiesItemModel.swift */,
+				993825052A70BB4A00F05886 /* LatLngModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */,
 				9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */,
 				998941422A6F74C0004A3BFB /* ActivitiesVM.swift in Sources */,
+				993825062A70BB4A00F05886 /* LatLngModel.swift in Sources */,
 				998941462A6F7631004A3BFB /* CustomActivitiesTblCell.swift in Sources */,
 				9995CF352A6A7ADA007B1284 /* HomeVM.swift in Sources */,
 				15E6C7174A6A372388889008 /* ChartCell.swift in Sources */,
