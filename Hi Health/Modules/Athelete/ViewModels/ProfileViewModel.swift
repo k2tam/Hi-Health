@@ -18,19 +18,9 @@ class ProfileViewModel {
     
     func fetchProfileTableData(completion: @escaping (_ profileTableData: ProfileTable) -> Void ) {
         
-        guard let tokenExchange = TokenDataManager.shared.getTokens() else {
-            print("No token exchange data")
-            return
-        }
+        let athleteModel = TokenDataManager.shared.getAthleteModel()
         
-        let athleteModel = tokenExchange.athleteInfo
-        
-        
-        guard let athleteModel = athleteModel else {
-            print("No athlete model")
-            return
-        }
-        
+      
         let userInfoSection = ProfileSection(firstName: athleteModel.firstName, lastName: athleteModel.lastName, state: athleteModel.state, country: athleteModel.country, avatarUrlString: athleteModel.profileMedium)
         
         
