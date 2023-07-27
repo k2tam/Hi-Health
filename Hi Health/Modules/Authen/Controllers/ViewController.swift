@@ -47,8 +47,6 @@ extension ViewController: APIServiceDelegate {
     func didSuccessAuthorized() {
         self.performSegue(withIdentifier: K.segueLoginToHome, sender: self)
     }
-    
-    
 }
 
 

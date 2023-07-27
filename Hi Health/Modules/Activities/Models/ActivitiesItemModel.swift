@@ -79,7 +79,7 @@ public struct ActivitiesIteamModel{
         self.resourceState = json["resourceState"].intValue
         self.name = json["name"].stringValue
         self.distance = json["distance"].doubleValue
-        self.movingTime = json["movingTime"].intValue
+        self.movingTime = json["moving_time"].intValue
         self.elapsedTime = json["elapsedTime"].intValue
         self.totalElevationGain = json["totalElevationGain"].intValue
         self.type = json["type"].stringValue
@@ -87,7 +87,7 @@ public struct ActivitiesIteamModel{
         self.workoutType = json["workoutType"].intValue
         self.id = json["id"].intValue
         self.startDate = json["startDate"].stringValue
-        self.startDateLocal = json["startDateLocal"].stringValue
+        self.startDateLocal = json["start_date_local"].stringValue
         self.timezone = json["timezone"].stringValue
         self.utcOffset = json["utcOffset"].intValue
         self.locationCountry = json["locationCountry"].stringValue

@@ -45,7 +45,7 @@
         <!--Profile View Controller-->
         <scene sceneID="oAL-Gc-7fF">
             <objects>
-                <viewController id="ZJq-4R-s5g" customClass="ProfileViewController" customModule="Hi_Health" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZJq-4R-s5g" customClass="ProfileViewController" customModule="Hi_Health" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jZm-o7-bHE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

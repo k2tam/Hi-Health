@@ -45,7 +45,23 @@ class CustomTabBar: UIView{
         super.init(coder: coder)
         setupView()
     }
-   
+    func configs(delegate:MyTabbarDelegate, isUpStore:Bool, onSuccess: ((_ controllers: [UIViewController])->Void)){
+        self.mDelegate = delegate
+        self.layoutSubviews()
+        
+        var controllers = [UIViewController]()
+        if let homeItem = items.first(where: { $0 == .home}) {
+            controllers.append(homeItem.viewController)//add Home
+        }
+
+        if let homeItem = items.first(where: { $0 == .activies}) {
+            controllers.append(homeItem.viewController)// add activies
+        }
+        if let homeItem = items.first(where: { $0 == .challenge}) {
+            controllers.append(homeItem.viewController)// add challenge
+        }
+        onSuccess(controllers)
+    }
     private func setupView(){
         Bundle.main.loadNibNamed("CustomTabBar", owner: self, options: nil)
         self.addSubview(ContentView)
@@ -102,16 +118,5 @@ class CustomTabBar: UIView{
         textThree.textColor = UIColor(red: 0.27, green: 0.394, blue: 0.929, alpha: 1)
         self.mDelegate?.didSelectItem(items[2])
     }
-    func configs(delegate:MyTabbarDelegate, isUpStore:Bool, onSuccess: ((_ controllers: [UIViewController])->Void)){
-        self.mDelegate = delegate
-       
-        self.layoutSubviews()
-        
-        var controllers = [UIViewController]()
-        if let homeItem = items.first(where: { $0 == .home}) {
-            controllers.append(homeItem.viewController)//add Home
-        }
-        onSuccess(controllers)
-    }
-    
+   
 }

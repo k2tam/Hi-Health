@@ -64,7 +64,7 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
                 })
             }
             cell.setupCell(data: data, image: imageArray[indexPath.item])
-            cell.selectionStyle = .none
+            cell .selectionStyle = .none
             return cell
         default:
             return UITableViewCell()

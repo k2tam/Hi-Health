@@ -119,7 +119,7 @@ class ActivitiesVM {
     }
     func fetchListActivities(vc: ActivitiesVC){
         let URL = "https://www.strava.com/api/v3/athlete/activities"
-        let headers: HTTPHeaders = ["Authorization" : "Bearer 92a023af41ad5f0626e874f5850d8eeec2fac024"]
+        let headers: HTTPHeaders = ["Authorization" : "Bearer f362bf88bbaf55423554b778e7c621814f3115c8"]
         APIManager.shared.requestAPI(endPoint: URL ,signatureHeader: true,optionalHeaders: headers,vc: vc, handler: { dataJon, errorJson in
             if (errorJson?.statusCode == StatusCode.SUCCESS.rawValue){
                 self.model = ActivitiesListVM(json: dataJon)
@@ -128,7 +128,7 @@ class ActivitiesVM {
     }
     func fetchDataMapRun(vc: ActivitiesVC,id idrun: Int,callback: @escaping()->()){
         let URL = "https://www.strava.com/api/v3/activities/\(idrun)/streams?keys=latlng&key_by_type=true"
-        let headers: HTTPHeaders = ["Authorization" : "Bearer 92a023af41ad5f0626e874f5850d8eeec2fac024"]
+        let headers: HTTPHeaders = ["Authorization" : "Bearer f362bf88bbaf55423554b778e7c621814f3115c8"]
         APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: vc, handler: { dataJon, errorJson in
             if (errorJson?.statusCode == StatusCode.SUCCESS.rawValue){
                 self.latlog = LatLngModel(json: dataJon!)

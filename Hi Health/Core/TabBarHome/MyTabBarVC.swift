@@ -40,7 +40,7 @@ class MyTabBarVC: UITabBarController{
         tabBar.isHidden = true
         
         let frame = CGRect(x: tabBar.frame.origin.x, y: tabBar.frame.origin.x, width: tabBar.frame.width, height: tabBarHeight)
-
+        
         mTabbar = CustomTabBar(frame: frame)
         mTabbar.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(mTabbar)
@@ -52,11 +52,11 @@ class MyTabBarVC: UITabBarController{
             self.mTabbar.heightAnchor.constraint(equalToConstant: tabBarHeight)
         ])
         var isUpStore = false
-        mTabbar.configs(delegate: self, isUpStore: isUpStore, onSuccess: { controllers in
+        mTabbar.configs(delegate: self, isUpStore: isUpStore, onSuccess: {
+            controllers in
             self.view.layoutIfNeeded()
             completion(controllers)
         })
-        
     }
 }
 extension MyTabBarVC: MyTabbarDelegate{
