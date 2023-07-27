@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-public struct ActivitiesModel{
+public struct ActivitiesIteamModel{
     var resourceState: Int
     var name: String
     var distance: Double

@@ -15,8 +15,8 @@ protocol APIServiceDelegate {
 }
 
 class APIAuthen {
-    let clientID = "110470"
-    let clientSecret = "d69b84d8f46f26a64415c905099741eaeeeb9ee0"
+    let clientID = "108282"
+    let clientSecret = "6f587e4345eb4819b3ed81763d31fd76d645ca19"
     let redirectUri = "myapp://developers.strava.com"
     let scope = "read_all,activity:read_all,activity:write"
     

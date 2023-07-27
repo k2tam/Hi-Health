@@ -7,13 +7,14 @@
 
 import Foundation
 import SwiftyJSON
+import Alamofire
 
 struct ActivitiesListVM {
-    private var activities: [ActivitiesModel]
+    fileprivate var activities: [ActivitiesIteamModel]
     
     init(json: JSON?) {
         if let json = json {
-            self.activities = json.arrayValue.map({ return ActivitiesModel(json: $0)})
+            self.activities = json.arrayValue.map({ return ActivitiesIteamModel(json: $0)})
         }
         else {
             self.activities = []
@@ -24,9 +25,8 @@ struct ActivitiesListVM {
         return activities.count
     }
     
-    func getActivitiesAtIndex(index: Int) -> ActivitiesModel? {
+    func getActivitiesAtIndex(index: Int) -> ActivitiesIteamModel? {
         return activities[index]
     }
-    
 
 }
