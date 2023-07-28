@@ -35,7 +35,6 @@
 		9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */; };
 		9967E0822A6535A700AB6B0C /* MyTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */; };
 		9967E0872A653D7500AB6B0C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0852A653D7500AB6B0C /* HomeVC.swift */; };
-		9967E0882A653D7500AB6B0C /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967E0862A653D7500AB6B0C /* HomeVC.xib */; };
 		9989413C2A6F7234004A3BFB /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989413B2A6F7234004A3BFB /* APIManager.swift */; };
 		9989413E2A6F7398004A3BFB /* ActivitiesVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9989413D2A6F7398004A3BFB /* ActivitiesVC.storyboard */; };
 		998941402A6F73C3004A3BFB /* ActivitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989413F2A6F73C3004A3BFB /* ActivitiesVC.swift */; };
@@ -49,6 +48,7 @@
 		9995CF352A6A7ADA007B1284 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995CF342A6A7ADA007B1284 /* HomeVM.swift */; };
 		99AFE9C52A64D5CA00615AB7 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AFE9C42A64D5CA00615AB7 /* TabItem.swift */; };
 		99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */; };
+		99D86B702A7254D800AB80FD /* HomeVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D86B6F2A7254D800AB80FD /* HomeVC.storyboard */; };
 		9C95CB30A2A4FE8DF93B8EF5 /* ImageCacheProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63791BBA89695561977F6E /* ImageCacheProvider.swift */; };
 		CB124105F9862C31F2644AA3 /* APIActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189A2979FB735EB21EDBF7A3 /* APIActivity.swift */; };
 		D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFCCC6E44AD958F139E9E58 /* FakeProfileViewModel.swift */; };
@@ -91,7 +91,6 @@
 		9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9967E0812A6535A700AB6B0C /* MyTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarVC.swift; sourceTree = "<group>"; };
 		9967E0852A653D7500AB6B0C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		9967E0862A653D7500AB6B0C /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		9989413B2A6F7234004A3BFB /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		9989413D2A6F7398004A3BFB /* ActivitiesVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesVC.storyboard; sourceTree = "<group>"; };
 		9989413F2A6F73C3004A3BFB /* ActivitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesVC.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		9995CF342A6A7ADA007B1284 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		99AFE9C42A64D5CA00615AB7 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
+		99D86B6F2A7254D800AB80FD /* HomeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeVC.storyboard; sourceTree = "<group>"; };
 		9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesChart.swift; sourceTree = "<group>"; };
 		CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiBtnCell.xib; sourceTree = "<group>"; };
 		E96E987F1DC7A049A0CC32E7 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
@@ -411,7 +411,7 @@
 		9995CF312A6A795C007B1284 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				9967E0862A653D7500AB6B0C /* HomeVC.xib */,
+				99D86B6F2A7254D800AB80FD /* HomeVC.storyboard */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -539,7 +539,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */,
-				9967E0882A653D7500AB6B0C /* HomeVC.xib in Resources */,
 				9989413E2A6F7398004A3BFB /* ActivitiesVC.storyboard in Resources */,
 				05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */,
 				998941472A6F7631004A3BFB /* CustomActivitiesTblCell.xib in Resources */,
@@ -548,6 +547,7 @@
 				05E92F1A2A5E993E00B6FFDE /* Main.storyboard in Resources */,
 				DC9F10425389CEA73226B258 /* ChartCell.xib in Resources */,
 				1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */,
+				99D86B702A7254D800AB80FD /* HomeVC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

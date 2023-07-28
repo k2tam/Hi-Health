@@ -45,7 +45,7 @@ extension ViewController : ASWebAuthenticationPresentationContextProviding {
 
 extension ViewController: APIServiceDelegate {
     func didSuccessAuthorized() {
-        self.performSegue(withIdentifier: K.segueLoginToHome, sender: self)
+        self.dismiss(animated: true)
     }
 }
 

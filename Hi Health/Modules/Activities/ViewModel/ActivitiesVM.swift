@@ -13,6 +13,9 @@ import MapKit
 
 class ActivitiesVM {
 
+    let defaults = UserDefaults.standard
+    
+    
     var annotations: [CLLocationCoordinate2D] = []
     
     fileprivate(set) var latlog: LatLngModel?
@@ -117,9 +120,10 @@ class ActivitiesVM {
             
         }
     }
+    
     func fetchListActivities(vc: ActivitiesVC){
         let URL = "https://www.strava.com/api/v3/athlete/activities"
-        let headers: HTTPHeaders = ["Authorization" : "Bearer f362bf88bbaf55423554b778e7c621814f3115c8"]
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(gettoken)"]
         APIManager.shared.requestAPI(endPoint: URL ,signatureHeader: true,optionalHeaders: headers,vc: vc, handler: { dataJon, errorJson in
             if (errorJson?.statusCode == StatusCode.SUCCESS.rawValue){
                 self.model = ActivitiesListVM(json: dataJon)
@@ -128,9 +132,10 @@ class ActivitiesVM {
     }
     func fetchDataMapRun(vc: ActivitiesVC,id idrun: Int,callback: @escaping()->()){
         let URL = "https://www.strava.com/api/v3/activities/\(idrun)/streams?keys=latlng&key_by_type=true"
-        let headers: HTTPHeaders = ["Authorization" : "Bearer f362bf88bbaf55423554b778e7c621814f3115c8"]
-        APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: vc, handler: { dataJon, errorJson in
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(gettoken)"]
+        APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: vc, handler: { [self] dataJon, errorJson in
             if (errorJson?.statusCode == StatusCode.SUCCESS.rawValue){
+                latlog = nil
                 self.latlog = LatLngModel(json: dataJon!)
                 callback()
             }

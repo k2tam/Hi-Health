@@ -8,6 +8,7 @@
 import UIKit
 
 class MyTabBarVC: UITabBarController{
+    
     var mTabbar: CustomTabBar!
     var tabBarHeight: CGFloat = 120
     override func viewDidLoad() {
@@ -69,7 +70,7 @@ extension MyTabBarVC: MyTabbarDelegate{
             self.selectedIndex = 1
             break
         case .activies:
-            self.selectedIndex = 3
+            self.selectedIndex = 2
             break
         }
     }

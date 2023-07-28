@@ -15,8 +15,8 @@ protocol APIServiceDelegate {
 }
 
 class APIAuthen {
-    let clientID = "108189"
-    let clientSecret = "3abb1e1776afd45f08ec908133f11f2eaf2168f2"
+    let clientID = "108282"
+    let clientSecret = "6f587e4345eb4819b3ed81763d31fd76d645ca19"
     let redirectUri = "myapp://developers.strava.com"
     let scope = "read_all,activity:read_all,activity:write"
     
@@ -40,7 +40,7 @@ class APIAuthen {
             return
         }
         
-        performRequestGetTokenExchange(url: url) { tokenExchange in
+        performRequestGetTokenExchange(url: urlString) { tokenExchange in
             
             TokenDataManager.shared.saveData(tokenExchange: tokenExchange)
         }
@@ -103,7 +103,7 @@ class APIAuthen {
                         return
                     }
                     
-                    self.performRequestGetTokenExchange(url: urlForExchange) { TokenExchange in
+                    self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
                         self.didGetTokenExchanged(tokenExchange: TokenExchange)
                     }
                 
@@ -132,7 +132,7 @@ extension APIAuthen {
         }
         
         
-        self.performRequestGetTokenExchange(url: urlForExchange) { TokenExchange in
+        self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
             self.didGetTokenExchanged(tokenExchange: TokenExchange)
         }
     }
@@ -146,23 +146,23 @@ extension APIAuthen {
             }
             
             
-            self.performRequestGetTokenExchange(url: urlForExchange) { TokenExchange in
+            self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
                 self.didGetTokenExchanged(tokenExchange: TokenExchange)
             }
         }
     }
     
     
-    func performRequestGetTokenExchange(url: URL, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
+    func performRequestGetTokenExchange(url: String, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
         
-        var urlString: String!
-        do {
-            urlString = try String(contentsOf: url)
-        }catch {
-            print("Failed to convert url to url String")
-        }
+//        var urlString: String!
+//        do {
+//            urlString = try String(contentsOf: url)
+//        }catch {
+//            print("Failed to convert url to url String")
+//        }
         
-        APIManager.shared.requestAPI(endPoint: urlString, methodHTTP: .post,signatureHeader: true, optionalHeaders: nil, vc: nil) { json, sstc in
+        APIManager.shared.requestAPI(endPoint: url, methodHTTP: .post,signatureHeader: true, optionalHeaders: nil, vc: nil) { json, sstc in
             if(sstc?.statusCode == StatusCode.SUCCESS.rawValue){
                 
                 guard let json = json else {

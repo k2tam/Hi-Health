@@ -9,19 +9,21 @@ import UIKit
 
 class HomeVC: UIViewController {
 
-    var viewModel: HomeVM!
+    var viewModel: HomeVM = HomeVM()
     
     
-    @IBOutlet weak var text: UILabel!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setupViewModel()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViewModel()
+       
        
     }
     func setupViewModel(){
-        viewModel = HomeVM()
         viewModel.checkLogin(vc: self)
     }
     

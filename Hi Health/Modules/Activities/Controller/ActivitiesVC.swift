@@ -48,8 +48,6 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomActivitiesTblCell") as! CustomActivitiesTblCell
@@ -65,12 +63,10 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
             }
             cell.setupCell(data: data, image: imageArray[indexPath.item])
             cell .selectionStyle = .none
+            
             return cell
         default:
             return UITableViewCell()
         }
-        
     }
-    
-    
 }

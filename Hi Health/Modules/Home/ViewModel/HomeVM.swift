@@ -18,7 +18,7 @@ class HomeVM {
     
     func checkLogin(vc: HomeVC){
         if let token = defaults.string(forKey: K.UserDefaultKeys.accessToken){
-            print(token)
+            print("************ \(token)**************")
             
         }else{
             pushLogin(vc: vc)
@@ -26,8 +26,8 @@ class HomeVM {
     }
     
     func pushLogin(vc: HomeVC){
-        guard let vcPopup = UIStoryboard(name: "Main", bundle: Bundle(for: HomeVM.self)).instantiateViewController(withIdentifier: "ViewController") as? ViewController else {return}
-        vc.modalPresentationStyle = .overFullScreen
-        vc.present(vcPopup, animated: false)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        vc.present(controller, animated: true, completion: nil)
     }
 }
