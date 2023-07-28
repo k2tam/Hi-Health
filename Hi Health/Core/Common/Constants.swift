@@ -26,6 +26,8 @@ struct K {
         static let chartCellId = "ChartCellIdentifier"
         static let actiBtnCellNibName = "ActiBtnCell"
         static let actiBtnCellId = "activityBtnCellId"
+        static let signOutBtnCellNibName = "SignOutCell"
+        static let signOutCellId = "SignOutCellId"
     }
     
 }

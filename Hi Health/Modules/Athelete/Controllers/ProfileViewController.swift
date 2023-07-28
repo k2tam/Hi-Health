@@ -8,12 +8,12 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var profileTableView: UITableView!
     
-//    var profileVM: FakeProfileViewModel!
+    //    var profileVM: FakeProfileViewModel!
     var profileVM: ProfileViewModel!
-
+    
     
     var tableProfileData: ProfileTable!
     var groupedActivites: [SpecificActivity]!
@@ -31,35 +31,38 @@ class ProfileViewController: UIViewController {
     
     func initProfileVM() {
         
-//                profileVM = FakeProfileViewModel()
-        
         profileVM = ProfileViewModel()
         
-
+        
         profileVM.fetchProfileTableData {[weak self] profileTableData in
             self?.tableProfileData = profileTableData
             
             DispatchQueue.main.async {
                 self?.profileTableView.reloadData()
-//                print(self?.tableProfileData.profileSections[1])
             }
-
+            
         }
     }
     
     func initProfileTalble() {
         profileTableView.delegate = self
         profileTableView.dataSource = self
-            
+        
         profileTableView.register(UINib(nibName: K.Cells.profileCellNibName, bundle: nil), forCellReuseIdentifier: K.Cells.profileCellId)
         profileTableView.register(UINib(nibName: K.Cells.chartCellNibName, bundle: nil), forCellReuseIdentifier: K.Cells.chartCellId)
+        profileTableView.register(UINib(nibName: K.Cells.signOutBtnCellNibName, bundle: nil), forCellReuseIdentifier: K.Cells.signOutCellId)
     }
     
 }
 
 extension ProfileViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-            return tableProfileData.profileSections.count
+        
+        guard let tableProfileData = tableProfileData else {
+            return 0
+        }
+        
+        return tableProfileData.profileSections.count
     }
     
     
@@ -82,8 +85,7 @@ extension ProfileViewController: UITableViewDataSource {
             let profileInfoSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.profileCellId) as! InfoCell
             profileInfoSectionView.displayNameLabel.text = profileSectionModel.profileNameDisplay
             profileInfoSectionView.locationLabel.text = profileSectionModel.userLocation
-            profileInfoSectionView.delegate = self
-        
+            
             let url = URL(string: profileSectionModel.avatarUrlString)
             
             if let url = url  {
@@ -92,7 +94,7 @@ extension ProfileViewController: UITableViewDataSource {
                 let session = URLSession(configuration: .default)
                 
                 let task = session.dataTask(with: url) { data, _, error in
-                
+                    
                     DispatchQueue.main.async {
                         profileInfoSectionView.avatarImgView.image = UIImage(data: data!)
                     }
@@ -101,15 +103,21 @@ extension ProfileViewController: UITableViewDataSource {
                 
                 task.resume()
             }
-          
+            
             return profileInfoSectionView
         case let .chart(chartSectionModel):
             let chartSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.chartCellId) as! ChartCell
             
             chartSectionView.chartCellData = chartSectionModel
- 
+            
             
             return chartSectionView
+        case .signOutBtn:
+            let signOutCellView = tableView.dequeueReusableCell(withIdentifier: K.Cells.signOutCellId) as! SignOutCell
+            
+            signOutCellView.delegate = self
+
+            return signOutCellView
             
         default:
             return tableView.dequeueReusableCell(withIdentifier: K.Cells.profileCellId)
@@ -127,41 +135,20 @@ extension ProfileViewController: UITableViewDelegate {
     
 }
 
-extension ProfileViewController: InfoCellDelegate {
-    func signOutButtonTapped() {
-        
-        performDeauthorizeRequest(accessToken: String(TokenDataManager.shared.getAccessToken()))
 
-        TokenDataManager.shared.clearUserLocalData()
+
+extension ProfileViewController: SignOutCellDelegate {
+    func didPressSignOut() {
+        self.profileVM.performSignOut()
+       
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true, completion: nil)
         
         
-        navigationController?.popToRootViewController(animated: true)
         
     }
-    
-    func performDeauthorizeRequest(accessToken: String) {
-        let urlString = "https://www.strava.com/oauth/deauthorize"
-        
-        let url = URL(string: urlString)
-        
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        
-        let bodyParameters = "access_token=\(accessToken)"
-        request.httpBody = bodyParameters.data(using: .utf8)
-        
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { _, response, error in
-            if let error = error {
-                print("Error: \(error)")
-                // Handle the error accordingly
-                return
-            }
-           
-        }
-        
-        task.resume()
-    }
-    
-    
+
 }

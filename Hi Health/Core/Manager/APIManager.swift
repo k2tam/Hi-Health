@@ -11,7 +11,7 @@ import SwiftyJSON
 class APIManager{
     
     static var shared: APIManager = APIManager()
-
+    
     static let sessionManager: Session = {
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForRequest = 10.0
@@ -45,7 +45,7 @@ class APIManager{
                 if(data.response!.statusCode != 0){
                     stCode = data.response!.statusCode
                 }
-            
+                
                 let statusResult = HiHealthStatusResult(message: result["message"].stringValue, statusCode: stCode)
                 
                 print("StatusCode: \(statusResult.statusCode)")

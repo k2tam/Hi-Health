@@ -29,7 +29,6 @@ class ChartCell: UITableViewCell {
         }
     }
     
-
     private func updateUI(actiIndex: Int) {
         // Use chartCellData to update the UI elements in the cell
         let latestActivityTypeToDisplay =  groupedActivities?[actiIndex].descOrderedActivites.first
@@ -47,16 +46,12 @@ class ChartCell: UITableViewCell {
         activitiesCollectionView.register(UINib(nibName: K.Cells.actiBtnCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cells.actiBtnCellId)
     }
     
-    
-
     override func awakeFromNib() {
         super.awakeFromNib()
         initActiCollectionView()
 //        setupChartView()
         
-      
-        
-        
+   
     }
     
     func setupChartView(actiIndex: Int) {
@@ -90,7 +85,6 @@ extension ChartCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-
         let actiBtnCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cells.actiBtnCellId, for: indexPath) as! ActiBtnCell
 
 //        let activityModel = activitesData[indexPath.row]
@@ -100,8 +94,7 @@ extension ChartCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
         actiBtnCell.actiBtnLabel.text = activityTypeModel?.typeActivity ?? ""
         actiBtnCell.actiBtnIcon.image = activityTypeModel?.activityIcon ?? UIImage()
 
-
-        return actiBtnCell
+    return actiBtnCell
     }
 
 
@@ -109,8 +102,6 @@ extension ChartCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLay
 
             return CGSize(width: 100, height: 30)
         }
-
-
 }
 
 extension ChartCell: UICollectionViewDelegate {

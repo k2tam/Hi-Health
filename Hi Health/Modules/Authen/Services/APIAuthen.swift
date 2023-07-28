@@ -15,15 +15,41 @@ protocol APIServiceDelegate {
 }
 
 class APIAuthen {
-    let clientID = "108282"
-    let clientSecret = "6f587e4345eb4819b3ed81763d31fd76d645ca19"
+
+    
+    static var shared: APIAuthen = APIAuthen()
+
+    let clientID = "108189"
+    let clientSecret = "3abb1e1776afd45f08ec908133f11f2eaf2168f2"
     let redirectUri = "myapp://developers.strava.com"
     let scope = "read_all,activity:read_all,activity:write"
     
     let defaults = UserDefaults.standard
     var delegate: APIServiceDelegate?
     
-    
+    public func performDeauthorizeRequest(accessToken: String) {
+        let urlString = "https://www.strava.com/oauth/deauthorize"
+
+        let url = URL(string: urlString)
+
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+
+        let bodyParameters = "access_token=\(accessToken)"
+        request.httpBody = bodyParameters.data(using: .utf8)
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { _, response, error in
+            if let error = error {
+                print("Error: \(error)")
+                // Handle the error accordingly
+                return
+            }
+
+        }
+
+        task.resume()
+    }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
         TokenDataManager.shared.saveData(tokenExchange: tokenExchange)
@@ -176,38 +202,7 @@ extension APIAuthen {
         
     }
     
-//    func performRequestGetTokenExchange(url: URL, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//        let session = URLSession(configuration: .default)
-//
-//        let task = session.dataTask(with: request) { data, response, error in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//
-//            if let safeData = data {
-//                let tokenExchange = self.parseJsonAuthenData(from: safeData)
-//                completion(tokenExchange)
-//            }
-//        }
-//
-//            task.resume()
-//
-//    }
-        
 
-    
-    
-//    func parseJsonAuthenData(from data: Data) -> TokenExchange {
-//        let json = JSON(data)
-//
-//        return TokenExchange(from: json)
-//
-//    }
     
     func extractAuthorizationCode(from url: URL) -> String? {
         if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems {

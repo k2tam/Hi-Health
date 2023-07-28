@@ -16,11 +16,17 @@ class ProfileViewModel {
     var groupedActivites: GroupedActivities?
 
     
+     func performSignOut() {
+         TokenDataManager.shared.clearUserLocalData()
+         APIAuthen.shared.performDeauthorizeRequest(accessToken: TokenDataManager.shared.getAccessToken())
+         
+    }
+
     func fetchProfileTableData(completion: @escaping (_ profileTableData: ProfileTable) -> Void ) {
+
         
         let athleteModel = TokenDataManager.shared.getAthleteModel()
         
-      
         let userInfoSection = ProfileSection(firstName: athleteModel.firstName, lastName: athleteModel.lastName, state: athleteModel.state, country: athleteModel.country, avatarUrlString: athleteModel.profileMedium)
         
         
@@ -31,7 +37,7 @@ class ProfileViewModel {
 
                 let chartDataSection = ChartSection(groupedActivies: groupedActivites.activites)
 
-                tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection)]
+                tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection),ProfileSectionType.signOutBtn]
                 completion(self.tableProfileData)
 
 
@@ -39,15 +45,6 @@ class ProfileViewModel {
         }
 
 
-        let chartDataSection = ChartSection(groupedActivies: [])
-        
-        
-        tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection)]
-        
-
-        
-        completion(tableProfileData)
-        
     }
    
 }
@@ -55,3 +52,4 @@ class ProfileViewModel {
 
 
         
+

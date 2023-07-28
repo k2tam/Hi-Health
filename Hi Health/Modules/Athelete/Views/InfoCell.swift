@@ -26,10 +26,7 @@ class InfoCell: UITableViewCell {
         avatarImgView.clipsToBounds = true
         
     }
-    
-    @IBAction func signOutPressed(_ sender: UIButton) {
-        delegate?.signOutButtonTapped()
-    }
+ 
 
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05075A202A6E64D000A87E77 /* TokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05075A1F2A6E64D000A87E77 /* TokenDataManager.swift */; };
+		05731A122A734E1F00AD2913 /* SignOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05731A102A734E1F00AD2913 /* SignOutCell.xib */; };
+		05731A132A734E1F00AD2913 /* SignOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05731A112A734E1F00AD2913 /* SignOutCell.swift */; };
 		0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */; };
 		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
 		05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564132A60E7E600267FD8 /* ProfileViewController.swift */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		05075A1F2A6E64D000A87E77 /* TokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataManager.swift; sourceTree = "<group>"; };
+		05731A102A734E1F00AD2913 /* SignOutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignOutCell.xib; sourceTree = "<group>"; };
+		05731A112A734E1F00AD2913 /* SignOutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCell.swift; sourceTree = "<group>"; };
 		05E564082A60015100267FD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05E564132A60E7E600267FD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05E564152A60E89C00267FD8 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 		05E5642C2A61581900267FD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05731A112A734E1F00AD2913 /* SignOutCell.swift */,
+				05731A102A734E1F00AD2913 /* SignOutCell.xib */,
 				9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */,
 				549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */,
 				4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */,
@@ -548,6 +554,7 @@
 				DC9F10425389CEA73226B258 /* ChartCell.xib in Resources */,
 				1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */,
 				99D86B702A7254D800AB80FD /* HomeVC.storyboard in Resources */,
+				05731A122A734E1F00AD2913 /* SignOutCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +633,7 @@
 				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 				05E564352A615B2B00267FD8 /* InfoCell.swift in Sources */,
 				CB124105F9862C31F2644AA3 /* APIActivity.swift in Sources */,
+				05731A132A734E1F00AD2913 /* SignOutCell.swift in Sources */,
 				998941522A6FCDDD004A3BFB /* StatusCode.swift in Sources */,
 				0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */,
 				D4ACB0B34E2A366DDAADFF42 /* FakeProfileViewModel.swift in Sources */,
