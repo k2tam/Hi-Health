@@ -8,5 +8,7 @@ target 'Hi Health' do
   # Pods for Hi Health
   pod 'SwiftyJSON'
   pod 'Kingfisher'
+  pod "TinyConstraints"
+  pod 'Charts'
   pod 'Alamofire'
 end

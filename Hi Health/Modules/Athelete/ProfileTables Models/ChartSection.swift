@@ -24,10 +24,7 @@ struct SpecificActivity {
     
     var descOrderedActivites: [Activity] {
         return activities.sorted { (activity1, activity2) -> Bool in
-//               if let date1 = activity1.starDate, let date2 = activity2.starDate {
-//                   return date1 > date2
-//               }
-//               return false
+
             return activity1.starDate > activity2.starDate
             
            }
@@ -51,11 +48,11 @@ struct GroupedActivities {
         var groupedActivitiesDex: [String: [Activity]] = [:]
 
         for acti in activities{
-            if var group = groupedActivitiesDex[acti.activityType ?? ""] {
+            if var group = groupedActivitiesDex[acti.activityType ] {
                 group.append(acti)
-                groupedActivitiesDex[acti.activityType ?? ""] = group
+                groupedActivitiesDex[acti.activityType ] = group
             } else {
-                groupedActivitiesDex[acti.activityType ?? ""] = [acti]
+                groupedActivitiesDex[acti.activityType] = [acti]
             }
         }
 
@@ -80,6 +77,20 @@ struct Activity {
     let starDate: String
     let activityType: String
     
+    var getDayMonth: (day: Int, month: Int) {
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+           if let date = dateFormatter.date(from: starDate) {
+               let calendar = Calendar.current
+               let day = calendar.component(.day, from: date)
+               let month = calendar.component(.month, from: date)
+               return (day, month)
+           } else {
+               return (0,0)
+           }
+    }
+ 
     var formattedStartDate: String {
             let inputDateFormatter = ISO8601DateFormatter()
             inputDateFormatter.formatOptions = [.withInternetDateTime]
@@ -94,21 +105,14 @@ struct Activity {
         }
     
     var distanceString: String {
-//        guard let distance = distance else {
-//            return "0,00 km"
-//        }
+
         
         return  String(format: "%.2f km", distance/1000.0)
     }
     
     var timeString: String {
-//        guard let movingTime = movingTime else {
-//            return "0h"
-//        }
-        
-        
-        
-        
+
+
         let hours = movingTime / 3600
         let minutes = movingTime / 60
         let remainingSeconds = movingTime % 60
@@ -138,5 +142,4 @@ struct Activity {
         }
     }
 }
-
 

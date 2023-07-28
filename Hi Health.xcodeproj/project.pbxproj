@@ -10,6 +10,9 @@
 		05075A202A6E64D000A87E77 /* TokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05075A1F2A6E64D000A87E77 /* TokenDataManager.swift */; };
 		05731A122A734E1F00AD2913 /* SignOutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05731A102A734E1F00AD2913 /* SignOutCell.xib */; };
 		05731A132A734E1F00AD2913 /* SignOutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05731A112A734E1F00AD2913 /* SignOutCell.swift */; };
+		05731A252A73CC4400AD2913 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05731A232A73CC4400AD2913 /* ChartView.xib */; };
+		05731A262A73CC4400AD2913 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05731A242A73CC4400AD2913 /* ChartView.swift */; };
+		05731A282A73CC5200AD2913 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05731A272A73CC5200AD2913 /* ChartViewModel.swift */; };
 		0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */; };
 		05E564092A60015100267FD8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564082A60015100267FD8 /* Constants.swift */; };
 		05E564142A60E7E600267FD8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E564132A60E7E600267FD8 /* ProfileViewController.swift */; };
@@ -31,7 +34,6 @@
 		15E6C7174A6A372388889008 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */; };
 		16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */; };
 		1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */; };
-		78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */; };
 		993825062A70BB4A00F05886 /* LatLngModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993825052A70BB4A00F05886 /* LatLngModel.swift */; };
 		9967E0752A64EE7600AB6B0C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */; };
 		9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */; };
@@ -63,6 +65,9 @@
 		05075A1F2A6E64D000A87E77 /* TokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataManager.swift; sourceTree = "<group>"; };
 		05731A102A734E1F00AD2913 /* SignOutCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignOutCell.xib; sourceTree = "<group>"; };
 		05731A112A734E1F00AD2913 /* SignOutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutCell.swift; sourceTree = "<group>"; };
+		05731A232A73CC4400AD2913 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		05731A242A73CC4400AD2913 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		05731A272A73CC5200AD2913 /* ChartViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		05E564082A60015100267FD8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05E564132A60E7E600267FD8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		05E564152A60E89C00267FD8 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
@@ -89,7 +94,6 @@
 		549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiBtnCell.swift; sourceTree = "<group>"; };
 		5F506A9A9C9B0D9809FE76E9 /* Pods_Hi_Health.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hi_Health.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A49FD4A563BCCAF0492840 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
-		90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChartView.swift; sourceTree = "<group>"; };
 		993825052A70BB4A00F05886 /* LatLngModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLngModel.swift; sourceTree = "<group>"; };
 		9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		9967E07F2A6530DC00AB6B0C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +132,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05731A202A73CBA500AD2913 /* ActivityChart */ = {
+			isa = PBXGroup;
+			children = (
+				05731A222A73CC2700AD2913 /* ViewModels */,
+				05731A212A73CC2000AD2913 /* Views */,
+			);
+			path = ActivityChart;
+			sourceTree = "<group>";
+		};
+		05731A212A73CC2000AD2913 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05731A242A73CC4400AD2913 /* ChartView.swift */,
+				05731A232A73CC4400AD2913 /* ChartView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05731A222A73CC2700AD2913 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				05731A272A73CC5200AD2913 /* ChartViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		05E564112A60E64300267FD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +331,7 @@
 		997767A42A61425B004C9CC1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				05731A202A73CBA500AD2913 /* ActivityChart */,
 				9967E0782A64FC9F00AB6B0C /* Home */,
 				99AFE9C32A64D47200615AB7 /* Activities */,
 				997767A62A6144B8004C9CC1 /* Athelete */,
@@ -318,7 +349,6 @@
 				997767A72A6144CB004C9CC1 /* Models */,
 				D7DEA4E5256E5B40C4BB52D4 /* Services */,
 				3CBAC045C4EF8D634933B904 /* ProfileTables Models */,
-				90EA3EE7BAFD7355C8B97B41 /* ActivityChartView.swift */,
 			);
 			path = Athelete;
 			sourceTree = "<group>";
@@ -547,6 +577,7 @@
 				05E92F1F2A5E993F00B6FFDE /* LaunchScreen.storyboard in Resources */,
 				9989413E2A6F7398004A3BFB /* ActivitiesVC.storyboard in Resources */,
 				05E5641A2A60EEAE00267FD8 /* InfoCell.xib in Resources */,
+				05731A252A73CC4400AD2913 /* ChartView.xib in Resources */,
 				998941472A6F7631004A3BFB /* CustomActivitiesTblCell.xib in Resources */,
 				99AFE9D52A64E5F600615AB7 /* CustomTabBar.xib in Resources */,
 				05E92F1C2A5E993F00B6FFDE /* Assets.xcassets in Resources */,
@@ -624,6 +655,7 @@
 				05E564212A60F73200267FD8 /* ChartSection.swift in Sources */,
 				05E564162A60E89C00267FD8 /* Athlete.swift in Sources */,
 				9989413C2A6F7234004A3BFB /* APIManager.swift in Sources */,
+				05731A262A73CC4400AD2913 /* ChartView.swift in Sources */,
 				9989414F2A6FB2A6004A3BFB /* ActivitiesListVM.swift in Sources */,
 				9967E0802A6530DC00AB6B0C /* SceneDelegate.swift in Sources */,
 				99AFE9C52A64D5CA00615AB7 /* TabItem.swift in Sources */,
@@ -633,6 +665,7 @@
 				05E5641D2A60F5FD00267FD8 /* TableData.swift in Sources */,
 				05E564352A615B2B00267FD8 /* InfoCell.swift in Sources */,
 				CB124105F9862C31F2644AA3 /* APIActivity.swift in Sources */,
+				05731A282A73CC5200AD2913 /* ChartViewModel.swift in Sources */,
 				05731A132A734E1F00AD2913 /* SignOutCell.swift in Sources */,
 				998941522A6FCDDD004A3BFB /* StatusCode.swift in Sources */,
 				0578DF93E9131AC0A809A126 /* ActiBtnCell.swift in Sources */,
@@ -644,7 +677,6 @@
 				9995CF352A6A7ADA007B1284 /* HomeVM.swift in Sources */,
 				15E6C7174A6A372388889008 /* ChartCell.swift in Sources */,
 				FB7A98FCABD50B4BBB2FB21C /* Utilites.swift in Sources */,
-				78C14A4384A65366D256E89B /* ActivityChartView.swift in Sources */,
 				9989414D2A6FAD39004A3BFB /* ActivitiesItemModel.swift in Sources */,
 				998941402A6F73C3004A3BFB /* ActivitiesVC.swift in Sources */,
 				16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */,

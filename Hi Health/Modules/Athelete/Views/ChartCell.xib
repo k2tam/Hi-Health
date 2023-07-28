@@ -141,8 +141,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="actiChartView" destination="Kbo-cH-YDg" id="GVU-lM-cXf"/>
                 <outlet property="activitiesCollectionView" destination="RRJ-bk-K5c" id="iYJ-bA-q0j"/>
-                <outlet property="chartView" destination="Kbo-cH-YDg" id="rLc-tm-fKe"/>
+                <outlet property="dateLabel" destination="zqm-rr-6nD" id="yDE-m0-oT4"/>
                 <outlet property="distanceLabel" destination="2d2-iJ-qf0" id="q4S-TO-chy"/>
                 <outlet property="elevationLabel" destination="uOg-Nd-O2u" id="LPA-VZ-xio"/>
                 <outlet property="timeLabel" destination="5uK-WA-CXK" id="873-cc-wAQ"/>
