@@ -17,20 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGb-VW-SKX">
-                                <rect key="frame" x="163.66666666666666" y="408.66666666666669" width="66" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiFPT" translatesAutoresizingMaskIntoConstraints="NO" id="xOO-d4-MpW">
+                                <rect key="frame" x="121.66666666666669" y="143" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="KY0-w4-TTa"/>
+                                    <constraint firstAttribute="width" constant="150" id="wRf-Jo-4KD"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnc-HQ-fmR">
+                                <rect key="frame" x="20" y="680" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="U2m-70-yJu"/>
+                                </constraints>
+                                <color key="tintColor" red="0.29803922770000002" green="0.38823530080000002" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                 <connections>
-                                    <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="imp-Kt-Nnf"/>
+                                    <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UuQ-WO-k8A"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Strava" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-VY-PpO">
+                                <rect key="frame" x="118.66666666666667" y="333" width="155.66666666666663" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.38823530080000002" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AGb-VW-SKX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ehK-C9-o1y"/>
-                            <constraint firstItem="AGb-VW-SKX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ghw-a9-Lnk"/>
+                            <constraint firstItem="xOO-d4-MpW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LLM-jl-U7h"/>
+                            <constraint firstItem="nvw-VY-PpO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LzX-th-NKN"/>
+                            <constraint firstItem="nnc-HQ-fmR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MX5-mm-h8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nnc-HQ-fmR" secondAttribute="trailing" constant="20" id="TGB-8H-DuE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nnc-HQ-fmR" secondAttribute="bottom" constant="88" id="eBP-Dg-PsD"/>
+                            <constraint firstItem="nvw-VY-PpO" firstAttribute="top" secondItem="xOO-d4-MpW" secondAttribute="bottom" constant="40" id="o38-5P-d1U"/>
+                            <constraint firstItem="xOO-d4-MpW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="puh-So-bQk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UTw-EE-f6o"/>
@@ -40,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1054.1984732824426" y="-34.507042253521128"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="oAL-Gc-7fF">
@@ -93,6 +114,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hiFPT" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
