@@ -50,16 +50,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rgr-qh-aj7">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rgr-qh-aj7">
+                                <rect key="frame" x="0.0" y="103" width="393" height="629"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpk-XT-bcw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="rgr-qh-aj7" secondAttribute="bottom" constant="120" id="UQU-Lg-lFQ"/>
                             <constraint firstAttribute="trailing" secondItem="rgr-qh-aj7" secondAttribute="trailing" id="VlO-Dt-f1r"/>
-                            <constraint firstItem="rgr-qh-aj7" firstAttribute="bottom" secondItem="vpk-XT-bcw" secondAttribute="bottom" id="gAm-Az-kI9"/>
                             <constraint firstItem="rgr-qh-aj7" firstAttribute="leading" secondItem="jZm-o7-bHE" secondAttribute="leading" id="q8M-rC-aBB"/>
                             <constraint firstItem="rgr-qh-aj7" firstAttribute="top" secondItem="vpk-XT-bcw" secondAttribute="top" id="xl6-0u-2oD"/>
                         </constraints>

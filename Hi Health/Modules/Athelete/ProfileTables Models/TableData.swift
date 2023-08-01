@@ -9,7 +9,7 @@ import Foundation
 
 enum ProfileSectionType {
     case profile(ProfileSection)
-    case chart(ChartSection)
+    case chart(ChartSection?)
     case items(ItemsSection)
     case signOutBtn
 

@@ -14,14 +14,9 @@ class APIActvity {
     private init() {}
     
     func fetchAthleteGroupedActivitiesData(completion: @escaping (_ groupedActivites : GroupedActivities?) -> Void)  {
-        
-        
         var groupedActivites: GroupedActivities?
         
-        var accessToken =  TokenDataManager.shared.getAccessToken()
-        
-        //        UserDefaults.standard.object(forKey: K.UserDefaultKeys.accessToken) as? String
-        
+        let accessToken =  TokenDataManager.shared.getAccessToken()
         
         let urlString = "https://www.strava.com/api/v3/athlete/activities?access_token=\(accessToken)"
         
@@ -48,14 +43,8 @@ class APIActvity {
                 }
             }
             
-            
-           
-            
-            
         }
-        
-        
-        
+
         
     }
     

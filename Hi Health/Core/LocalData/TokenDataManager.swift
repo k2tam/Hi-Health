@@ -12,8 +12,14 @@ class TokenDataManager {
 
     static let shared = TokenDataManager()
 
-
     private init() {}
+    
+    func saveRefreshTokenData(tokenExchange: TokenExchange) {
+        defaults.set(tokenExchange.athleteId, forKey: K.UserDefaultKeys.athleteID)
+        defaults.set(tokenExchange.accessToken, forKey: K.UserDefaultKeys.accessToken)
+        defaults.set(tokenExchange.refreshToken, forKey: K.UserDefaultKeys.refreshToken)
+        defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
+    }
 
     // Save tokens to UserDefault
     func saveData(tokenExchange: TokenExchange) {
@@ -21,8 +27,7 @@ class TokenDataManager {
         defaults.set(tokenExchange.accessToken, forKey: K.UserDefaultKeys.accessToken)
         defaults.set(tokenExchange.refreshToken, forKey: K.UserDefaultKeys.refreshToken)
         defaults.set(tokenExchange.expiresAt, forKey: K.UserDefaultKeys.expiresAt)
-        
-        
+    
 //        self.athleteModel = tokenExchange.athleteInfo
         
         let encoder = JSONEncoder()
@@ -44,8 +49,13 @@ class TokenDataManager {
         defaults.removeObject(forKey: K.UserDefaultKeys.athleteModel)
     }
     
-    func getRefreshToken() -> Int {
-        return defaults.integer(forKey: K.UserDefaultKeys.refreshToken)
+    func getRefreshToken() -> String {
+        guard let refreshToken = defaults.string(forKey: K.UserDefaultKeys.refreshToken) else {
+            print("Failed get refresh Token")
+            return ""
+        }
+        
+        return refreshToken
     }
     
     func getAccessToken() -> String {
@@ -57,12 +67,9 @@ class TokenDataManager {
         return accessToken
     }
     
-    
     func getTokenExpiresAt() -> Int {
         return defaults.integer(forKey: K.UserDefaultKeys.expiresAt)
     }
-    
-    
     
     func getAthleteModel() -> Athlete {
         let athleteModel: Athlete?

@@ -21,24 +21,51 @@ class ChartCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     var chartView = ChartView()
-
+    
     private var chartVM: ChartViewModel!
-
+    
     
     var groupedActivities: [SpecificActivity]?
-
+    
     var chartCellData: ChartSection? {
         didSet {
             // Update UI based on the new value of chartCellData
             self.groupedActivities =  chartCellData?.groupedActivies
-            if !groupedActivities!.isEmpty {
-                updateUI(actiIndex: 0)
+            
+            guard let groupedActivities = groupedActivities else{
+                chartView.chartData = nil
+                return
+            }
+            
+            if !groupedActivities.isEmpty {
+                // Delay the call to updateUI to the next run loop cycle
+                DispatchQueue.main.async { [weak self] in
+                    self?.updateUI(actiIndex: 0)
+                }
             }
         }
     }
     
-
     private func updateUI(actiIndex: Int) {
+        let indexPath = IndexPath(item: actiIndex, section: 0)
+        
+        let visibleCells = activitiesCollectionView.visibleCells
+        
+        // Iterate through the visible cells
+        for cell in activitiesCollectionView.visibleCells {
+            if let cellIndexPath = activitiesCollectionView.indexPath(for: cell) {
+                if let actiBtnCell = cell as? ActiBtnCell {
+                    // Check if the cell is selected or not and update its UI accordingly
+                    if cellIndexPath == indexPath {
+                        actiBtnCell.updateUIForSelectedIndex()
+                    } else {
+                        actiBtnCell.updateUIForUnSelectedIndex()
+                    }
+                }
+            }
+        }
+        
+        
         // Use chartCellData to update the UI elements in the cell
         guard let latestActivityTypeToDisplay =  groupedActivities?[actiIndex].descOrderedActivites.first else {
             print("No latestActivityTypeToDisplay")
@@ -46,15 +73,15 @@ class ChartCell: UITableViewCell {
         }
         
         let actiModels = groupedActivities?[actiIndex].ascOrderedActivites.map { activity in
-                   return activity
+            return activity
             
         }
-
+        
         chartVM.updateChartData(activities: groupedActivities?[actiIndex].ascOrderedActivites ?? [])
         chartView.actiModels = actiModels
         updateActiLabel(activity: latestActivityTypeToDisplay)
         
-
+        
     }
     
     func updateActiLabel(activity: Activity) {
@@ -64,12 +91,10 @@ class ChartCell: UITableViewCell {
     }
     
     
-    
-
     func initActiCollectionView() {
         activitiesCollectionView.dataSource = self
         activitiesCollectionView.delegate = self
-
+        
         activitiesCollectionView.register(UINib(nibName: K.Cells.actiBtnCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cells.actiBtnCellId)
     }
     
@@ -78,17 +103,16 @@ class ChartCell: UITableViewCell {
         initActiCollectionView()
         setUpChart()
     }
-
+    
     
     private var currentChartView: UIView?
-    
     
     
     func setUpChart() {
         chartVM = ChartViewModel()
         chartVM.delegate = self
         chartView.customDelegate = self
-
+        
         actiChartView.addSubview(chartView)
         chartView.edgesToSuperview()
         
@@ -96,43 +120,40 @@ class ChartCell: UITableViewCell {
 }
 
 extension ChartCell: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return groupedActivities?.count ?? 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let actiBtnCell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cells.actiBtnCellId, for: indexPath) as! ActiBtnCell
-
+        
         let activityTypeModel = groupedActivities?[indexPath.row]
-
-        actiBtnCell.actiBtnLabel.text = activityTypeModel?.typeActivity ?? ""
-        actiBtnCell.actiBtnIcon.image = activityTypeModel?.activityIcon ?? UIImage()
-
-
+        
+        actiBtnCell.activityTypeModel = activityTypeModel
+        
         return actiBtnCell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-
-            return CGSize(width: 100, height: 30)
-        }
+        
+        return CGSize(width: 100, height: 30)
+    }
 }
 
 extension ChartCell: ChartViewModelDelegate {
     func didGetNewChartData(barChartData: Charts.BarChartData, actiModelsList: [Activity]) {
         chartView.chartData = barChartData
     }
-
-
+    
 }
 
 
 extension ChartCell: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         updateUI(actiIndex: indexPath.item)
         
     }

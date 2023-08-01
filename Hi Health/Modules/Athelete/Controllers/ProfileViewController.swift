@@ -13,19 +13,13 @@ class ProfileViewController: UIViewController {
     
     //    var profileVM: FakeProfileViewModel!
     var profileVM: ProfileViewModel!
-    
-    
     var tableProfileData: ProfileTable!
-    var groupedActivites: [SpecificActivity]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         initProfileVM()
         initProfileTalble()
-        
         
     }
     
@@ -57,52 +51,30 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+
         guard let tableProfileData = tableProfileData else {
             return 0
         }
-        
+
         return tableProfileData.profileSections.count
     }
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         switch tableProfileData.profileSections[section]{
         case let .items(itemsSection):
             return itemsSection.rows
         default:
-            return 0
+            return 1
         }
-        
+
     }
     
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        switch tableProfileData.profileSections[section] {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch tableProfileData.profileSections[indexPath.section] {
         case let .profile(profileSectionModel):
             let profileInfoSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.profileCellId) as! InfoCell
-            profileInfoSectionView.displayNameLabel.text = profileSectionModel.profileNameDisplay
-            profileInfoSectionView.locationLabel.text = profileSectionModel.userLocation
-            
-            let url = URL(string: profileSectionModel.avatarUrlString)
-            
-            if let url = url  {
-                
-                
-                let session = URLSession(configuration: .default)
-                
-                let task = session.dataTask(with: url) { data, _, error in
-                    
-                    DispatchQueue.main.async {
-                        profileInfoSectionView.avatarImgView.image = UIImage(data: data!)
-                    }
-                    
-                }
-                
-                task.resume()
-            }
+            profileInfoSectionView.profileSectionModel = profileSectionModel
             
             return profileInfoSectionView
         case let .chart(chartSectionModel):
@@ -116,17 +88,17 @@ extension ProfileViewController: UITableViewDataSource {
             let signOutCellView = tableView.dequeueReusableCell(withIdentifier: K.Cells.signOutCellId) as! SignOutCell
             
             signOutCellView.delegate = self
-
+            
             return signOutCellView
             
         default:
-            return tableView.dequeueReusableCell(withIdentifier: K.Cells.profileCellId)
+            let signOutCellView = tableView.dequeueReusableCell(withIdentifier: K.Cells.signOutCellId) as! SignOutCell
+            
+            signOutCellView.delegate = self
+            
+            return signOutCellView
         }
         
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
     }
     
 }
@@ -135,20 +107,16 @@ extension ProfileViewController: UITableViewDelegate {
     
 }
 
-
-
 extension ProfileViewController: SignOutCellDelegate {
     func didPressSignOut() {
         self.profileVM.performSignOut()
-       
+        
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ViewController")
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true, completion: nil)
         
-        
-        
     }
-
+    
 }

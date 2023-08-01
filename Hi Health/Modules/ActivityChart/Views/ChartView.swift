@@ -54,7 +54,7 @@ class ChartView: BarChartView {
     private func setCustomXAxisLabels() {
         guard let actiModels = actiModels else { return }
         
-        //         Calculate the desired bar width based on the number of data points
+        //Calculate the desired bar width based on the number of data points
         let barWidth = 1.0 / Double(actiModels.count)
         
         // Set the bar width

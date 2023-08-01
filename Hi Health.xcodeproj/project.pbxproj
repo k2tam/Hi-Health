@@ -32,7 +32,6 @@
 		05E92F282A5EAC0900B6FFDE /* APIAuthen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F272A5EAC0900B6FFDE /* APIAuthen.swift */; };
 		05E92F2B2A5EB83700B6FFDE /* TokenExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E92F2A2A5EB83700B6FFDE /* TokenExchange.swift */; };
 		15E6C7174A6A372388889008 /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */; };
-		16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */; };
 		1DF4F6FE6B395EA0A91DAF40 /* ActiBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */; };
 		993825062A70BB4A00F05886 /* LatLngModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993825052A70BB4A00F05886 /* LatLngModel.swift */; };
 		9967E0752A64EE7600AB6B0C /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9967E0742A64EE7600AB6B0C /* CustomTabBar.swift */; };
@@ -113,7 +112,6 @@
 		99AFE9C42A64D5CA00615AB7 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		99AFE9D42A64E5F600615AB7 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
 		99D86B6F2A7254D800AB80FD /* HomeVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeVC.storyboard; sourceTree = "<group>"; };
-		9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesChart.swift; sourceTree = "<group>"; };
 		CAAFC5F2D89B75580A14C844 /* ActiBtnCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiBtnCell.xib; sourceTree = "<group>"; };
 		E96E987F1DC7A049A0CC32E7 /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		FA5E5B48FAFD8365611E5409 /* Pods-Hi Health.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hi Health.debug.xcconfig"; path = "Target Support Files/Pods-Hi Health/Pods-Hi Health.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 			children = (
 				05731A112A734E1F00AD2913 /* SignOutCell.swift */,
 				05731A102A734E1F00AD2913 /* SignOutCell.xib */,
-				9CC5F6124759FD0A28D9183F /* ActivitesChart.swift */,
 				549AF0D0FAF532B9214BC5F1 /* ActiBtnCell.swift */,
 				4FAD69BD0FE6D6A9082F6AE4 /* ChartCell.swift */,
 				05E564332A615B2B00267FD8 /* InfoCell.swift */,
@@ -679,7 +676,6 @@
 				FB7A98FCABD50B4BBB2FB21C /* Utilites.swift in Sources */,
 				9989414D2A6FAD39004A3BFB /* ActivitiesItemModel.swift in Sources */,
 				998941402A6F73C3004A3BFB /* ActivitiesVC.swift in Sources */,
-				16E96103EB9922040B4B8C8F /* ActivitesChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -827,7 +823,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7755R4CX4U;
+				DEVELOPMENT_TEAM = 29955KP3ZL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hi Health/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -840,7 +836,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.k2tam.Hi-Healths";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k2tam.Hi-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -859,7 +855,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7755R4CX4U;
+				DEVELOPMENT_TEAM = 29955KP3ZL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Hi Health/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -872,7 +868,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.k2tam.Hi-Healths";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k2tam.Hi-Health";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

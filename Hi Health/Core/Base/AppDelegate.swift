@@ -13,10 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+        
+        APIAuthen.shared.checkLoginStatus()
+
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = MyTabBarVC()
+        window.rootViewController = ViewController()
         window.makeKeyAndVisible()
+
+
         return true
+
+        
     }
     
     // MARK: UISceneSession Lifecycle

@@ -14,63 +14,41 @@ class ImageCacheProvider {
     
     private init() {}
     
-    func fetchImage(imgUrlString: String) async -> UIImage? {
-        
+    func fetchImage(imgUrlString: String, completion: @escaping (UIImage?) -> Void) {
         
         if let image = cache.object(forKey: "image") {
-            print("Using cache")
-            return image
+            completion(image)
+            return
         }
         
+        guard let imgUrl = URL(string: imgUrlString) else {
+            completion(nil)
+            return
+        }
 
-        guard let imgUrl = URL(string: imgUrlString) else {return nil}
-            
-        
-        do{
-            let (data,_) = try await URLSession.shared.data(from: imgUrl)
-            let img = UIImage(data: data)
-            
-            guard let img = img else {
-                print("error fetching img")
-                return nil
+        let task = URLSession.shared.dataTask(with: imgUrl) {[weak self] data, _, error in
+
+            guard let data = data, error == nil else {
+                print("error in fetching data")
+                return
             }
             
-            self.cache.setObject(img, forKey: "image")
-            return img
-        }catch {
-            print(error.localizedDescription)
-            return nil
+            
+            guard let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self?.cache.setObject(image, forKey: "image")
+                
+                completion(image)
+                
+            }
+  
         }
         
-        
-        
-//        let task = session.dataTask(with: imgUrl) {[weak self] data, _, error in
-//
-//            guard let error = error else {
-//                return
-//            }
-//
-//            guard let data = data else {
-//                print("error in fetching data")
-//                return
-//            }
-//
-//                let image = UIImage(data: data)
-//
-//                guard let image = image else {
-//                    completion(nil)
-//                    return
-//                }
-//
-//                self?.cache.setObject(image, forKey: "image")
-//
-//
-//
-//                completion(image)
-//
-//        }
-//
-//        task.resume()
+        task.resume()
     }
     
 }

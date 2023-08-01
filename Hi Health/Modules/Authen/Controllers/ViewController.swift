@@ -18,9 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         apiAuthen.delegate = self
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(handleURLCode(_:)), name: Notification.Name("GetURLCode"), object: nil)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(handleURLCode(_:)), name: Notification.Name("GetURLCode"), object: nil)
     }
     
     @objc func handleURLCode(_ notification: Notification) {
@@ -32,7 +31,6 @@ class ViewController: UIViewController {
 
     @IBAction func loginBtn(_ sender: UIButton) {
         apiAuthen.authorize(viewController: self)
-        
     }
 }
 

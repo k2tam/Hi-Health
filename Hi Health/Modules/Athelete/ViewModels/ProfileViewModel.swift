@@ -17,8 +17,8 @@ class ProfileViewModel {
 
     
      func performSignOut() {
-         TokenDataManager.shared.clearUserLocalData()
-         APIAuthen.shared.performDeauthorizeRequest(accessToken: TokenDataManager.shared.getAccessToken())
+        APIAuthen.shared.performDeauthorizeRequest(accessToken: TokenDataManager.shared.getAccessToken())
+        TokenDataManager.shared.clearUserLocalData()
          
     }
 
@@ -30,18 +30,25 @@ class ProfileViewModel {
         let userInfoSection = ProfileSection(firstName: athleteModel.firstName, lastName: athleteModel.lastName, state: athleteModel.state, country: athleteModel.country, avatarUrlString: athleteModel.profileMedium)
         
         
-        APIActvity.shared.fetchAthleteGroupedActivitiesData { [self] groupedActivites in
-
+        APIActvity.shared.fetchAthleteGroupedActivitiesData {  groupedActivites in
+            
             if let groupedActivites = groupedActivites {
                 self.groupedActivites = groupedActivites
 
                 let chartDataSection = ChartSection(groupedActivies: groupedActivites.activites)
 
-                tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection),ProfileSectionType.signOutBtn]
+                self.tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection),ProfileSectionType.signOutBtn]
+                
                 completion(self.tableProfileData)
 
 
+            }else {
+                self.tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(nil), ProfileSectionType.signOutBtn]
             }
+         
+
+            completion(self.tableProfileData)
+
         }
 
 

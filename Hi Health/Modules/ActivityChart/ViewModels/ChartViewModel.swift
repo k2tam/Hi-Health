@@ -16,7 +16,12 @@ class ChartViewModel {
     var delegate: ChartViewModelDelegate?
     
   
-    func updateChartData(activities: [Activity]) {
+    func updateChartData(activities: [Activity]?) {
+        guard let activities = activities else {
+            
+            return
+        }
+        
         var dataEntries: [BarChartDataEntry] = []
         
         

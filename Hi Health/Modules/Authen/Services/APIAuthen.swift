@@ -8,6 +8,7 @@
 import Foundation
 import AuthenticationServices
 import SwiftyJSON
+import Alamofire
 
 protocol APIServiceDelegate {
     func didSuccessAuthorized()
@@ -15,40 +16,35 @@ protocol APIServiceDelegate {
 }
 
 class APIAuthen {
-
-    
     static var shared: APIAuthen = APIAuthen()
 
     let clientID = "108189"
     let clientSecret = "3abb1e1776afd45f08ec908133f11f2eaf2168f2"
     let redirectUri = "myapp://developers.strava.com"
-    let scope = "read_all,activity:read_all,activity:write"
+    let scope = "read_all,activity:read_all,activity:write,activity:read"
     
     let defaults = UserDefaults.standard
     var delegate: APIServiceDelegate?
     
     public func performDeauthorizeRequest(accessToken: String) {
+        
+        
         let urlString = "https://www.strava.com/oauth/deauthorize"
+        
+        let parameters: [String: Any] = ["access_token": accessToken]
 
-        let url = URL(string: urlString)
 
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
+        APIManager.shared.requestAPI(endPoint: urlString,params: parameters, methodHTTP: .post, signatureHeader: true, optionalHeaders: nil, vc: nil) { json, response in
+            if(response?.statusCode == StatusCode.SUCCESS.rawValue){
+                if let json = json {
+                    print("Access token revoked: \(String(describing: json["access_token"].string))")
 
-        let bodyParameters = "access_token=\(accessToken)"
-        request.httpBody = bodyParameters.data(using: .utf8)
-
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { _, response, error in
-            if let error = error {
-                print("Error: \(error)")
-                // Handle the error accordingly
-                return
+                }
             }
-
+            else{
+                print("Failed to de authorize")
+            }
         }
-
-        task.resume()
     }
     
     func didGetTokenExchanged(tokenExchange: TokenExchange) {
@@ -62,35 +58,73 @@ class APIAuthen {
     func getNewTokenExchange(refreshToken: String) {
         let urlString = "https://www.strava.com/oauth/token?grant_type=refresh_token&client_id=\(clientID)&client_secret=\(clientSecret)&refresh_token=\(refreshToken)"
         
-        guard let url = URL(string: urlString) else {
-            return
-        }
         
         performRequestGetTokenExchange(url: urlString) { tokenExchange in
+            TokenDataManager.shared.saveRefreshTokenData(tokenExchange: tokenExchange)
             
-            TokenDataManager.shared.saveData(tokenExchange: tokenExchange)
+            self.checkLoginStatus()
+
+//            self.checkLoginStatus(checked: true)
         }
         
-        checkLoginStatus()
     }
     
     func checkLoginStatus() {
-        let expiresAtTimestamp: TimeInterval = Double(TokenDataManager.shared.getTokenExpiresAt())
-        // Get the current timestamp
         
-        let currentTimestamp = Date().timeIntervalSince1970
+        let URL = "https://www.strava.com/api/v3/athlete"
+        let headers: HTTPHeaders = ["Authorization" : "Bearer \(TokenDataManager.shared.getAccessToken())"]
         
-
-        // Compare the expiration timestamp with the current timestamp
-        if  expiresAtTimestamp != 0 {
-            if expiresAtTimestamp < currentTimestamp {
-                getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
-               
+        APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: nil) {[weak self]  _, errorJson in
+            if let statusCode = errorJson?.statusCode, statusCode == StatusCode.UNAUTHORIZED.rawValue {
+                // Token expired, try to refresh the token
+                self?.getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
             } else {
-                delegate?.didSuccessAuthorized()
+                // Handle the API response here (success or other errors)
+                self?.delegate?.didSuccessAuthorized()
+                return
 
             }
         }
+
+        let expiresAtTimestamp: TimeInterval = Double(TokenDataManager.shared.getTokenExpiresAt())
+        let currentTimestamp = Date().timeIntervalSince1970
+
+        // Compare the expiration timestamp with the current timestamp
+        if expiresAtTimestamp != 0 && expiresAtTimestamp < currentTimestamp {
+            // Token might be expired, attempt to refresh the token
+            getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
+        } else {
+            // Token is still valid
+            delegate?.didSuccessAuthorized()
+            return
+        }
+        
+//
+//        APIManager.shared.requestAPI(endPoint: URL ,signatureHeader: true,optionalHeaders: headers,vc: nil, handler: { _, errorJson in
+//            if (errorJson?.statusCode == StatusCode.UNAUTHORIZED.rawValue){
+//                //Token expired
+//                self.getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
+//            }
+//        })
+//
+//        let expiresAtTimestamp: TimeInterval = Double(TokenDataManager.shared.getTokenExpiresAt())
+//        // Get the current timestamp
+//
+//        let currentTimestamp = Date().timeIntervalSince1970
+//
+//
+//        // Compare the expiration timestamp with the current timestamp
+//        if  expiresAtTimestamp != 0 {
+//            if expiresAtTimestamp < currentTimestamp {
+//                getNewTokenExchange(refreshToken: String(TokenDataManager.shared.getRefreshToken()))
+//
+//
+//            } else {
+//                //token is still valid
+//                delegate?.didSuccessAuthorized()
+//            }
+//        }
+        
     }
 
     func authorize(viewController: UIViewController) {
@@ -125,9 +159,6 @@ class APIAuthen {
                     let urlForExchangeString = "https://www.strava.com/api/v3/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(code)&grant_type=authorization_code"
                     
                         
-                    guard let urlForExchange = URL(string: urlForExchangeString) else {
-                        return
-                    }
                     
                     self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
                         self.didGetTokenExchanged(tokenExchange: TokenExchange)
@@ -153,10 +184,6 @@ extension APIAuthen {
     func getTokenExchangeFromApp(codeForExchange: String) {
         let urlForExchangeString = "https://www.strava.com/api/v3/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(codeForExchange)&grant_type=authorization_code"
         
-        guard let urlForExchange = URL(string: urlForExchangeString) else {
-            return
-        }
-        
         
         self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
             self.didGetTokenExchanged(tokenExchange: TokenExchange)
@@ -167,11 +194,7 @@ extension APIAuthen {
         if let code = extractAuthorizationCode(from: url){
             let urlForExchangeString = "https://www.strava.com/oauth/token?client_id=\(self.clientID)&client_secret=\(self.clientSecret)&code=\(code)&grant_type=authorization_code"
             
-            guard let urlForExchange = URL(string: urlForExchangeString) else {
-                return
-            }
-            
-            
+  
             self.performRequestGetTokenExchange(url: urlForExchangeString) { TokenExchange in
                 self.didGetTokenExchanged(tokenExchange: TokenExchange)
             }
@@ -180,14 +203,6 @@ extension APIAuthen {
     
     
     func performRequestGetTokenExchange(url: String, completion: @escaping (_ tokenExchange: TokenExchange) -> Void ) {
-        
-//        var urlString: String!
-//        do {
-//            urlString = try String(contentsOf: url)
-//        }catch {
-//            print("Failed to convert url to url String")
-//        }
-        
         APIManager.shared.requestAPI(endPoint: url, methodHTTP: .post,signatureHeader: true, optionalHeaders: nil, vc: nil) { json, sstc in
             if(sstc?.statusCode == StatusCode.SUCCESS.rawValue){
                 
@@ -201,8 +216,6 @@ extension APIAuthen {
         }
         
     }
-    
-
     
     func extractAuthorizationCode(from url: URL) -> String? {
         if let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems {
