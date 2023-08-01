@@ -52,7 +52,7 @@ class MyTabBarVC: UITabBarController{
             self.mTabbar.bottomAnchor.constraint(equalTo: tabBar.bottomAnchor),
             self.mTabbar.heightAnchor.constraint(equalToConstant: tabBarHeight)
         ])
-        var isUpStore = false
+        let isUpStore = false
         mTabbar.configs(delegate: self, isUpStore: isUpStore, onSuccess: {
             controllers in
             self.view.layoutIfNeeded()

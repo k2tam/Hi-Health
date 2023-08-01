@@ -9,12 +9,15 @@ import Foundation
 import SwiftyJSON
 
 struct LatLngModel{
+    var id: Int
     var latlng: Latlng
-    init(latlng: Latlng) {
+    init(id: Int, latlng: Latlng) {
+        self.id = id
         self.latlng = latlng
     }
-    init(json: JSON){
-        self.latlng = Latlng(json: json["latlng"])
+    init(json: JSON, id: Int){
+        self.id = id
+        self.latlng = Latlng(json: json["latlng"]) 
     }
 }
 struct Latlng{

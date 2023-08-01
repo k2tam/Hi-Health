@@ -12,11 +12,10 @@ import CoreLocation
 import MapKit
 
 class ActivitiesVM {
-
+    
     let defaults = UserDefaults.standard
     
-    
-    var annotations: [CLLocationCoordinate2D] = []
+    var annotationsIndex : [Int : [CLLocationCoordinate2D]] = [:]
     
     fileprivate(set) var latlog: LatLngModel?
     fileprivate(set) var currentItem: ActivitiesIteamModel?
@@ -31,7 +30,7 @@ class ActivitiesVM {
     var getTotalActivities: Int{
         return model?.getTotalActivities() ?? 0
     }
-
+    
     var gettoken: String {
         return TokenDataManager.shared.getAccessToken()
     }
@@ -41,9 +40,11 @@ class ActivitiesVM {
     func getLatlng() -> LatLngModel{
         return self.latlog!
     }
-    func getImageRun(callback: @escaping ((UIImage)->())){
+    func getImageRun(data: LatLngModel?,id : Int,callback: @escaping ((UIImage)->())){
+        
+        let arraydata = data?.latlng.data
 
-        let arraydata = latlog?.latlng.data
+        var annotations: [CLLocationCoordinate2D] = []
         
         var minLat = arraydata?.first?.first
         var maxLat = minLat
@@ -57,13 +58,14 @@ class ActivitiesVM {
                 minLng = min(minLng!, element.last!)
                 maxLng = max(maxLng!, element.last!)
                 
-                self.annotations.append(CLLocationCoordinate2D(latitude: element.first!, longitude:element.last!))
-                
+                annotations.append(CLLocationCoordinate2D(latitude: element.first!, longitude: element.last!))
             }
+            
+            self.annotationsIndex[id] = annotations
             
             // Calculate the span based on the difference between minimum and maximum coordinates
             let span = MKCoordinateSpan(latitudeDelta: maxLat! - minLat!, longitudeDelta: maxLng! - minLng!)
-             
+            
             // Calculate the center coordinate
             let center = CLLocationCoordinate2D(latitude: (minLat! + maxLat!) / 2, longitude: (minLng! + maxLng!) / 2)
             
@@ -84,28 +86,30 @@ class ActivitiesVM {
             options.pointOfInterestFilter = .excludingAll
             
             let snapshotter = MKMapSnapshotter(options: options)
-            snapshotter.start { [self] snapshot, error in
+            snapshotter.start { snapshot, error in
                 if let snapshot = snapshot {
                     // The map snapshot is available as an image in the snapshot variable
                     let image = snapshot.image
                     //                    self!.imageMap.image = image
                     let render = UIGraphicsImageRenderer(size: image.size).image{_ in
                         image.draw(at: .zero)
-                    
+
                         
-                        let points = annotations.map { annotation in
-                            
-                            snapshot.point(for: annotation)
+                        var points: [CGPoint] = []
+                        self.annotationsIndex[id].map { data in
+                            points = data.map { dataj in
+                                snapshot.point(for: dataj)
+                            }
                         }
-                        
+
                         let path = UIBezierPath()
-                        path.move(to: points[0])
+                        path.move(to: points[0] )
                         
                         for point in points.dropFirst() {
-                            path.addLine(to: point)
+                            path.addLine(to: point )
                             //print(point.x)
                         }
-                        path.lineWidth = 1
+                        path.lineWidth = 2
                         UIColor.blue.setStroke()
                         path.stroke()
                         
@@ -113,7 +117,7 @@ class ActivitiesVM {
                     callback(render)
                     // Process or display the image as needed
                 } else if let error = error {
-                    
+                    print(error)
                 }
             }
         }else{
@@ -130,14 +134,12 @@ class ActivitiesVM {
             }
         })
     }
-    func fetchDataMapRun(vc: ActivitiesVC,id idrun: Int,callback: @escaping()->()){
+    func fetchDataMapRun(vc: ActivitiesVC,id idrun: Int,callback: @escaping(JSON)->()){
         let URL = "https://www.strava.com/api/v3/activities/\(idrun)/streams?keys=latlng&key_by_type=true"
         let headers: HTTPHeaders = ["Authorization" : "Bearer \(gettoken)"]
-        APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: vc, handler: { [self] dataJon, errorJson in
+        APIManager.shared.requestAPI(endPoint: URL, signatureHeader: true, optionalHeaders: headers, vc: vc, handler: { dataJon, errorJson in
             if (errorJson?.statusCode == StatusCode.SUCCESS.rawValue){
-                latlog = nil
-                self.latlog = LatLngModel(json: dataJon!)
-                callback()
+                callback(dataJon!)
             }
         })
     }

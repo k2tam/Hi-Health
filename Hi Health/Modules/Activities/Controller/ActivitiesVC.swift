@@ -53,8 +53,8 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CustomActivitiesTblCell") as! CustomActivitiesTblCell
             let data = viewModel.getActivitiesInfo(atIndex: indexPath.item)
             cell.callbackidImge = { [self] id in
-                viewModel.fetchDataMapRun(vc: self, id: id, callback: {
-                    self.viewModel.getImageRun(callback: { data in
+                viewModel.fetchDataMapRun(vc: self, id: id, callback: {data in
+                    self.viewModel.getImageRun(data: LatLngModel(json: data, id: indexPath.row), id: indexPath.row, callback: { data in
                         self.imageArray[indexPath.item] = data
                         print(self.imageArray.count)
                         tableView.reloadData()
