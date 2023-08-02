@@ -10,7 +10,7 @@ import Foundation
 class TokenDataManager {
     let defaults = UserDefaults.standard
 
-    static let shared = TokenDataManager()
+    static let shared:TokenDataManager = TokenDataManager()
 
     private init() {}
     
@@ -69,6 +69,11 @@ class TokenDataManager {
     
     func getTokenExpiresAt() -> Int {
         return defaults.integer(forKey: K.UserDefaultKeys.expiresAt)
+    }
+    
+    func getNameAvatar() -> [String]{
+        let data = self.getAthleteModel()
+        return [data.firstName+" "+data.lastName,data.profileMedium]
     }
     
     func getAthleteModel() -> Athlete {

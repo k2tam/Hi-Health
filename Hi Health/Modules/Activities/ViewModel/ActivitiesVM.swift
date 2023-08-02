@@ -40,6 +40,38 @@ class ActivitiesVM {
     func getLatlng() -> LatLngModel{
         return self.latlog!
     }
+    func getNameavatar() -> [String]{
+        let data = TokenDataManager.shared.getNameAvatar()
+        return data
+    }
+    func secondsToHoursMinutesSeconds(seconds: Double) -> String {
+      let (hr,  minf) = modf(seconds / 3600)
+        let (min, secf) = modf(60 * minf)
+        if(hr == 0 && min == 0){
+            return "\(String(format:"%.0f",60 * secf))s"
+        }else if(hr == 0){
+            return "\(String(format:"%.0f",min))m:\(String(format:"%.0f",60 * secf))s"
+        }else {
+            return String(format:"%.0f",hr)+"h:\(String(format:"%.0f",min))m:\(String(format:"%.0f",60 * secf))s"//(hr, min, 60 * secf)
+        }
+    }
+    func getPace(time: Double, distance: Double) -> String {
+        return "\(String(format: "%.2f", (time/60)/(distance/1000))) /Km"
+    }
+    func getDistance(distance: Int) -> String {
+        let distanceString = String(format:"%.2f",Double(distance)/1000)+" Km"
+        return distanceString
+    }
+    func formatISO8601Date(dateString: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" // ISO 8601 format
+        if let date = dateFormatter.date(from: dateString) {
+            dateFormatter.dateFormat = "EEEE, MMM d, yyyy 'at' h:mm a"
+            return dateFormatter.string(from: date)
+        } else {
+            return nil
+        }
+    }
     func getImageRun(data: LatLngModel?,id : Int,callback: @escaping ((UIImage)->())){
         
         let arraydata = data?.latlng.data

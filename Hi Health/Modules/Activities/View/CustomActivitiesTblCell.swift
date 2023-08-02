@@ -33,17 +33,45 @@ class CustomActivitiesTblCell: UITableViewCell, MKMapViewDelegate {
         avatercell.layer.cornerRadius = 25
     }
    
-    func setupCell(data: ActivitiesIteamModel, image: UIImage?){
-        time.text = String(data.movingTime)
-        distance.text = String(data.distance)
-        datecell.text = data.startDateLocal
-        nameAtivities.text = data.name
-        
+    func setupCell(id: Int, moving_Time: String ,Distance: String ,startDateLocal: String ,name: String ,avatar: String,namePerson: String,paces: String, image: UIImage?){
+        time.text = moving_Time
+        distance.text = Distance
+        datecell.text = startDateLocal
+        nameAtivities.text = name
+        namecell.text = namePerson
+        pace.text = paces
+        avatercell.from(url: URL(string: avatar))
         if image != nil{
             imgMap.image = image
         }else{
-            callbackidImge?(data.id)
+            callbackidImge?(id)
         }
     }
     
+}
+extension UIImageView {
+    func from(url: URL?) {
+        guard let url = url else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                // Handle error
+                print("Error loading image: \(error)")
+                return
+            }
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                // Handle invalid image data
+                print("Invalid image data")
+                return
+            }
+            
+            // Use the loaded image on the main queue
+            DispatchQueue.main.async {
+                // Update UI or perform any other tasks with the image
+                self.image = image
+            }
+        }
+
+        task.resume()
+    }
 }
