@@ -7,13 +7,24 @@
 
 import UIKit
 
+
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileTableView: UITableView!
     
     //    var profileVM: FakeProfileViewModel!
     var profileVM: ProfileViewModel!
-    var tableProfileData: ProfileTable!
+    var tableProfileData: ProfileTable! {
+        didSet {
+            DispatchQueue.main.async {
+                self.profileTableView.reloadData()
+                
+            }
+        }
+    }
+    var groupedActivites: [SpecificActivity]!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +38,8 @@ class ProfileViewController: UIViewController {
         
         profileVM = ProfileViewModel()
         
-        
-        profileVM.fetchProfileTableData {[weak self] profileTableData in
-            self?.tableProfileData = profileTableData
-            
-            DispatchQueue.main.async {
-                self?.profileTableView.reloadData()
-            }
-            
+        profileVM.fetchProfileTableData { profileTableData in
+            self.tableProfileData = profileTableData
         }
     }
     
@@ -79,6 +84,7 @@ extension ProfileViewController: UITableViewDataSource {
             return profileInfoSectionView
         case let .chart(chartSectionModel):
             let chartSectionView = tableView.dequeueReusableCell(withIdentifier: K.Cells.chartCellId) as! ChartCell
+            chartSectionView.delegate = self
             
             chartSectionView.chartCellData = chartSectionModel
             
@@ -118,5 +124,17 @@ extension ProfileViewController: SignOutCellDelegate {
         self.present(controller, animated: true, completion: nil)
         
     }
+    
+}
+
+extension ProfileViewController: ChartCellDelegate {
+    func didSelectMonth(month: Int) {
+        
+        profileVM.fetchProfileTableData(month: month) { profileTableData in
+        
+            self.tableProfileData = profileTableData
+        }
+    }
+    
     
 }

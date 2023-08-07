@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ProfileViewModel {
         
-    private var tableProfileData = ProfileTable()
+    var tableProfileData = ProfileTable()
     
     var groupedActivites: GroupedActivities?
 
@@ -22,7 +22,7 @@ class ProfileViewModel {
          
     }
 
-    func fetchProfileTableData(completion: @escaping (_ profileTableData: ProfileTable) -> Void ) {
+    func fetchProfileTableData(month: Int = 7, completion: @escaping (_ profileTableData: ProfileTable) -> Void ) {
 
         
         let athleteModel = TokenDataManager.shared.getAthleteModel()
@@ -30,12 +30,12 @@ class ProfileViewModel {
         let userInfoSection = ProfileSection(firstName: athleteModel.firstName, lastName: athleteModel.lastName, state: athleteModel.state, country: athleteModel.country, avatarUrlString: athleteModel.profileMedium)
         
         
-        APIActvity.shared.fetchAthleteGroupedActivitiesData {  groupedActivites in
+        APIActvity.shared.fetchAthleteGroupedActivitiesData(month: month) {  groupedActivites in
             
             if let groupedActivites = groupedActivites {
                 self.groupedActivites = groupedActivites
 
-                let chartDataSection = ChartSection(groupedActivies: groupedActivites.activites)
+                let chartDataSection = ChartSection(groupedActivies: groupedActivites.activities)
 
                 self.tableProfileData.profileSections = [ProfileSectionType.profile(userInfoSection),ProfileSectionType.chart(chartDataSection),ProfileSectionType.signOutBtn]
                 

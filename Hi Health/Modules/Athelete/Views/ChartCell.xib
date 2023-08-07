@@ -123,19 +123,27 @@
                             <constraint firstAttribute="height" constant="180" id="y9E-ng-OUn"/>
                         </constraints>
                     </view>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="July" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ywE-bm-bV7">
+                        <rect key="frame" x="515" y="108" width="55" height="53"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="t7r-j1-iSe" firstAttribute="top" secondItem="ywE-bm-bV7" secondAttribute="bottom" constant="27" id="7SV-EZ-VIS"/>
                     <constraint firstAttribute="trailing" secondItem="t7r-j1-iSe" secondAttribute="trailing" constant="20" id="HqD-PS-MlT"/>
                     <constraint firstItem="RRJ-bk-K5c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="K2J-ZS-yLM"/>
                     <constraint firstItem="t7r-j1-iSe" firstAttribute="top" secondItem="zqm-rr-6nD" secondAttribute="bottom" constant="20" id="Ldy-a1-1vk"/>
                     <constraint firstItem="Kbo-cH-YDg" firstAttribute="top" secondItem="t7r-j1-iSe" secondAttribute="bottom" constant="20" id="ML9-Oa-vur"/>
                     <constraint firstAttribute="trailing" secondItem="Kbo-cH-YDg" secondAttribute="trailing" constant="20" id="NH4-Dc-aLU"/>
+                    <constraint firstItem="ywE-bm-bV7" firstAttribute="top" secondItem="RRJ-bk-K5c" secondAttribute="bottom" constant="28" id="XmJ-U0-H11"/>
                     <constraint firstAttribute="bottom" secondItem="Kbo-cH-YDg" secondAttribute="bottom" constant="10" id="YQn-AW-W7w"/>
                     <constraint firstItem="t7r-j1-iSe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cSR-tD-VgX"/>
                     <constraint firstItem="RRJ-bk-K5c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ehx-Up-FuX"/>
                     <constraint firstItem="zqm-rr-6nD" firstAttribute="top" secondItem="RRJ-bk-K5c" secondAttribute="bottom" constant="20" id="ghI-hW-rhy"/>
                     <constraint firstItem="Kbo-cH-YDg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hzm-6U-FYX"/>
                     <constraint firstAttribute="trailing" secondItem="RRJ-bk-K5c" secondAttribute="trailing" constant="20" id="jaH-ea-X0V"/>
+                    <constraint firstItem="ywE-bm-bV7" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="miB-M3-GMV"/>
                     <constraint firstItem="zqm-rr-6nD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nsc-QV-N5L"/>
                 </constraints>
             </tableViewCellContentView>
@@ -144,6 +152,7 @@
                 <outlet property="actiChartView" destination="Kbo-cH-YDg" id="GVU-lM-cXf"/>
                 <outlet property="activitiesCollectionView" destination="RRJ-bk-K5c" id="iYJ-bA-q0j"/>
                 <outlet property="dateLabel" destination="zqm-rr-6nD" id="yDE-m0-oT4"/>
+                <outlet property="dateTextField" destination="ywE-bm-bV7" id="wXF-mw-8me"/>
                 <outlet property="distanceLabel" destination="2d2-iJ-qf0" id="q4S-TO-chy"/>
                 <outlet property="elevationLabel" destination="uOg-Nd-O2u" id="LPA-VZ-xio"/>
                 <outlet property="timeLabel" destination="5uK-WA-CXK" id="873-cc-wAQ"/>

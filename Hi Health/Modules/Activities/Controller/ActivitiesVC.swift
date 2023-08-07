@@ -55,9 +55,9 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
             cell.callbackidImge = { [self] id in
                 viewModel.fetchDataMapRun(vc: self, id: id, callback: {data in
                     self.viewModel.getImageRun(data: LatLngModel(json: data, id: indexPath.row), id: indexPath.row, callback: { data in
-                        self.imageArray[indexPath.item] = data
+                        self.imageArray[indexPath.row] = data
                         print(self.imageArray.count)
-                        tableView.reloadData()
+                        tableView.reloadRows(at: [indexPath], with: .automatic)
                     })
                 })
             }

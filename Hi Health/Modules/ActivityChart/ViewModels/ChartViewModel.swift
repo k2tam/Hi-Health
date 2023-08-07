@@ -9,7 +9,8 @@ import Foundation
 import Charts
 
 protocol ChartViewModelDelegate {
-    func didGetNewChartData(barChartData: BarChartData, actiModelsList: [Activity])
+    func didGetNewChartData(chartData: LineChartData, actiModelsList: [Activity])
+    func clearChartData()
 }
 
 class ChartViewModel {
@@ -18,29 +19,23 @@ class ChartViewModel {
   
     func updateChartData(activities: [Activity]?) {
         guard let activities = activities else {
-            
             return
         }
         
-        var dataEntries: [BarChartDataEntry] = []
-        
-        
-        
+        var dataEntries: [ChartDataEntry] = []
+ 
         for actiModel in activities {
-            let dataEntry = BarChartDataEntry(x: Double(actiModel.getDayMonth.day), y: actiModel.distance/1000)
+            
+            let dataEntry = ChartDataEntry(x: Double(actiModel.getDayMonthYear.day), y: actiModel.distance/1000)
             dataEntries.append(dataEntry)
         }
         
-        let dataSet = BarChartDataSet(entries: dataEntries)
+        let dataSet = LineChartDataSet(entries: dataEntries)
         
-        let data = BarChartData(dataSet: dataSet)
+        let data = LineChartData(dataSet: dataSet)
         
-        delegate?.didGetNewChartData(barChartData: data,actiModelsList: activities)
+        delegate?.didGetNewChartData(chartData: data,actiModelsList: activities)
     }
-    
-    
-    
-
 }
 
 

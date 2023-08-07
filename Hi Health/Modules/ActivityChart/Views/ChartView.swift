@@ -9,18 +9,17 @@ import UIKit
 import Charts
 
 protocol CustomChartViewDelegate {
-    func didSelectABar(activity: Activity)
+    func didSelectAPoint(activity: Activity)
 }
 
-class ChartView: BarChartView {
+class ChartView: LineChartView {
     var customDelegate: CustomChartViewDelegate?
     var actiModels: [Activity]? {
         didSet {
-            setCustomXAxisLabels()
-            
+            formatXAxis()
         }
     }
-    var chartData: BarChartData? {
+    var chartData: LineChartData? {
         didSet {
             setChartData()
         }
@@ -38,33 +37,39 @@ class ChartView: BarChartView {
     }
     
     private func setChartData() {
-        
-        
         guard let chartData = chartData else {
-            self.data = BarChartData()
+            self.data = LineChartData()
             return
         }
-        
         
         self.delegate = self
         self.data = chartData
         
+        // Access the data set from the chart data
+           if let dataSet = chartData.dataSets.first as? LineChartDataSet {
+               dataSet.colors = [UIColor.orange] // Set the line color
+               dataSet.circleColors = [UIColor.orange] // Set the data point color
+               dataSet.circleHoleColor = UIColor.red // Set the color of the data point hole
+               dataSet.circleRadius = 4.0 // Set the radius of the data points
+           }
+        
     }
     
-    private func setCustomXAxisLabels() {
+    private func formatXAxis() {
         guard let actiModels = actiModels else { return }
         
-        //Calculate the desired bar width based on the number of data points
-        let barWidth = 1.0 / Double(actiModels.count)
+        // Create an array to store the x-axis labels
+        var xAxisLabels: [String] = []
         
-        // Set the bar width
-        if let barData = self.barData {
-            barData.barWidth = barWidth
+        // Iterate through the activity models and add the day label to the array
+        for actiModel in actiModels {
+            xAxisLabels.append("\(actiModel.getDayMonthYear.day)")
         }
-        
-        xAxis.setLabelCount(actiModels.count, force: false)
 
-    
+        // Set the x-axis label count and value formatter
+        xAxis.setLabelCount(actiModels.count, force: true)
+        
+
     }
     
     private func setupView() {
@@ -76,12 +81,21 @@ class ChartView: BarChartView {
         // Disable scrolling in the chart
         let yAxis = self.rightAxis
         
-        self.dragEnabled = false
+        if self.scaleX == 1.0 {
+            self.zoom(scaleX: 0.5, scaleY: 1, x: 0, y: 0)
+
+        }
+
         self.setScaleEnabled(false)
         
+        
         self.xAxis.labelFont = .boldSystemFont(ofSize: 10)
+        
+        
         yAxis.labelFont = .boldSystemFont(ofSize: 10)
-            
+        yAxis.axisMinimum = 0;
+        
+        
         // Adjust the Y-axis position
         self.leftAxis.enabled = false // Enable the right Y-axis
         self.leftAxis.drawLabelsEnabled = false // Hide labels on the right Y-axis
@@ -91,30 +105,35 @@ class ChartView: BarChartView {
         self.xAxis.drawGridLinesEnabled = false
         self.leftAxis.drawGridLinesEnabled = false
         self.rightAxis.drawGridLinesEnabled = false
-        
-        
+            
         //Remove legend
         self.legend.enabled = false
-        
     }
+    
+    
+    
+    
+    
 }
 
 extension ChartView: ChartViewDelegate{
-    
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         guard let actiModels = actiModels else { return }
-        
+
         let actiModelSelected = actiModels.first { actiModel in
-            actiModel.getDayMonth.day == Int(entry.x)
+            actiModel.getDayMonthYear.day == Int(entry.x)
         }
-        
+
         if let actiModelSelected = actiModelSelected {
-            customDelegate?.didSelectABar(activity: actiModelSelected)
+            highlightValue(nil, callDelegate: false)
+            customDelegate?.didSelectAPoint(activity: actiModelSelected)
             
         }
         
     }
+   
 }
+
 
 
 
