@@ -61,12 +61,13 @@ extension ActivitiesVC: UITableViewDelegate, UITableViewDataSource{
                     })
                 })
             }
-            cell.setupCell(data: data, image: imageArray[indexPath.item])
+            cell.setupCell(id: data.id, moving_Time: viewModel.secondsToHoursMinutesSeconds(seconds: Double(data.movingTime)), Distance: viewModel.getDistance(distance: Int(data.distance)), startDateLocal: viewModel.formatISO8601Date(dateString: data.startDateLocal)!, name: data.name,avatar: viewModel.getNameavatar().last!,namePerson: viewModel.getNameavatar().first!,paces: viewModel.getPace(time: Double(data.movingTime), distance: Double(data.distance)), image: imageArray[indexPath.item])
             cell .selectionStyle = .none
-            
+
             return cell
         default:
             return UITableViewCell()
         }
     }
 }
+
